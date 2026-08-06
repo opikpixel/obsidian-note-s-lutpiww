@@ -1,0 +1,16 @@
+- [[Keuangan]]
+- Photography
+- Videografi
+- Organizing
+- Graphic Design
+- Excel
+- Word
+- Cooking
+- Communication
+- Music
+- Prompt AI
+- Content
+- Product Digital
+- Writing
+- Bahasa
+- Programming
