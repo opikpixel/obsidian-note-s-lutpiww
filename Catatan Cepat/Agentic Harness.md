@@ -1,0 +1,5 @@
+Video ini menjelaskan konsep **Agentic Harness** dalam konteks kecerdasan buatan (AI). Berikut adalah poin-poin utamanya:
+
+- **Definisi Agen (0:10-0:23):** Agen didefinisikan sebagai _Large Language Model (LLM)_ yang menggunakan alat (_tools_) dan berjalan dalam sebuah _loop_ untuk mencapai tujuan tertentu. LLM sendiri pada dasarnya hanya melakukan prediksi token berikutnya.
+- **Definisi Agentic Harness (1:25-1:49):** _Harness_ adalah infrastruktur yang berada di "sekitar" LLM. Ini mencakup mekanisme untuk memberi akses ke _tools_ (seperti pengambilan konteks eksternal), logika pemrograman yang menjalankan agen dalam _loop_, serta evaluasi untuk menentukan apakah tugas sudah selesai.
+- **Pemisahan Antarmuka (2:00-2:29):** Penting untuk memisahkan _harness_ dari antarmuka pengguna (_user interface_). _Harness_ adalah bagian yang mengontrol logika dan perilaku LLM, sehingga kita bisa mengganti antarmuka sesuai kebutuhan pengguna, atau bahkan menggunakan antarmuka terprogram untuk agen otonom (2:30-2:49).

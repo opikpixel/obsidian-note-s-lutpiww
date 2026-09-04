@@ -1,0 +1,39 @@
+summaries:
+  Unique: values.unique().length
+filters:
+  and:
+    - note["base"] == link("List Tools.base")
+properties:
+  file.name:
+    displayName: Name
+  URL:
+    displayName: URL
+  Account:
+    displayName: Account
+  Jenis:
+    displayName: Jenis
+  Genre:
+    displayName: Genre
+  Summary:
+    displayName: Summary
+views:
+  - type: table
+    name: Table View
+    groupBy:
+      property: Genre
+      direction: ASC
+    order:
+      - file.name
+      - Genre
+      - URL
+      - Account
+      - Jenis
+      - Summary
+    sort: []
+    summaries: {}
+    columnSize:
+      note.Genre: 135
+      note.URL: 143
+      note.Account: 122
+  - type: table
+    name: View

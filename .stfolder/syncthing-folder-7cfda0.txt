@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: u726k-hktuq
+created: 2026-08-07T10:08:50+07:00

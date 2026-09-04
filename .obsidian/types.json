@@ -1,0 +1,13 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "color": "multitext",
+    "URL": "text",
+    "Account": "text",
+    "Jenis": "multitext",
+    "Genre": "multitext",
+    "Summary": "text"
+  }
+}

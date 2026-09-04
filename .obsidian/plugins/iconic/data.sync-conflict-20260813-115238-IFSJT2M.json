@@ -1,0 +1,78 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": false,
+  "showMenuActions": true,
+  "showSuggestionIcons": false,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "desktop",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 100,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 2,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": true,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "Dashboard.md": {
+      "icon": "👉"
+    },
+    "Project Lutpiw": {
+      "icon": "lucide-briefcase-business",
+      "color": "orange"
+    },
+    "Second Brain": {
+      "icon": "🧠"
+    },
+    "Second Brain/Mata Pelajaran/Informatika": {
+      "icon": "lucide-message-square-code",
+      "color": "cyan"
+    },
+    "Second Brain/Skill": {
+      "icon": "💪"
+    },
+    "Second Brain/Wawasan": {
+      "icon": "🤔"
+    },
+    "Tags": {
+      "icon": "#️⃣"
+    },
+    "copilot": {
+      "icon": "🤖"
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [
+    {
+      "id": "o1IOy",
+      "name": "Aturan",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "name",
+          "operator": "contains"
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "folderRules": []
+}

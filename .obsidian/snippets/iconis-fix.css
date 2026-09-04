@@ -1,0 +1,10 @@
+/* Memberi jarak khusus pada teks nama file/note yang memiliki ikon dari plugin Iconic */
+.nav-file-title-content {
+    margin-left: 18px !important;
+}
+
+/* Mengatur kontainer ikon file agar posisinya sejajar dan tidak menimpa teks */
+.nav-file-title .iconic-icon {
+    margin-right: 5px !important;
+    flex-shrink: 0;
+}

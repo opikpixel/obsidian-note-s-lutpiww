@@ -1,0 +1,27 @@
+- Business Case
+- CTF
+- Hackacton
+- Essay
+- Debate - 
+- Short Video
+- Fotografi
+- Infografis 
+- Cerdas Cermat
+- Olimpiade Sains
+- PKM
+- Karya Tulis Ilmiah
+- Kaligrafi
+- Melukis
+- Menggambar
+- Menyanyi
+- Tari
+- Teater
+- Standup
+- Cerpen
+- Compettive Progrmming
+- UI/UX
+- GAme
+- Web Aplikasi
+- Robot
+- Pitching
+- Olahraga

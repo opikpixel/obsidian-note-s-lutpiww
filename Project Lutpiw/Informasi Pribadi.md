@@ -1,4 +1,6 @@
-
+---
+color:
+---
 
 > [!info] Data Pribadi
 > - NIK : 3273241302070001
@@ -10,7 +12,7 @@
 > - RDN :
 > - PIN Sekuritas :
 
-> [! Info] Informasi Akun
+> [!info] Informasi Akun
 >  1. Google
 > 	 -  alhamsyahlutfi2007@gmail.com
 > 	 - hailutf14lham@gmail.com

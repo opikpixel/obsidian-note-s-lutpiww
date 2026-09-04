@@ -1,0 +1,12 @@
+{
+  "cssTheme": "Minimal",
+  "interfaceFontFamily": "Bahnschrift",
+  "textFontFamily": "Georgia",
+  "monospaceFontFamily": "Courier New",
+  "baseFontSize": 14,
+  "baseFontSizeAction": true,
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "iconis-fix"
+  ]
+}

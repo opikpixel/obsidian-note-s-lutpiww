@@ -1,0 +1,211 @@
+{
+  "biggerIcons": "on",
+  "clickableIcons": "off",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": false,
+  "minimalFolderIcons": true,
+  "showMarkdownTabIcons": true,
+  "showTitleIcons": true,
+  "showTagPillIcons": true,
+  "showMenuActions": true,
+  "showSuggestionIcons": false,
+  "showQuickSwitcherIcons": true,
+  "showMoveFileIcons": true,
+  "showItemName": "on",
+  "useSearchKeywords": "on",
+  "maxSearchResults": 150,
+  "colorPicker1": "list",
+  "colorPicker2": "list",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "maxBackups": 2,
+  "dialogState": {
+    "iconMode": true,
+    "emojiMode": true,
+    "rulePage": "file"
+  },
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "/": {
+      "icon": "📔"
+    },
+    "Dashboard.md": {
+      "icon": "lucide-brush-cleaning"
+    },
+    "Project Lutpiw": {
+      "icon": "lucide-briefcase-business",
+      "color": "orange"
+    },
+    "Second Brain": {
+      "icon": "🧠"
+    },
+    "Second Brain/Mata Pelajaran": {
+      "icon": "📚"
+    },
+    "Second Brain/Mata Pelajaran/Bahasa Indonesia": {
+      "icon": "lucide-languages"
+    },
+    "Second Brain/Mata Pelajaran/Biologi": {
+      "icon": "🧫"
+    },
+    "Second Brain/Mata Pelajaran/Ekonomi": {
+      "icon": "💹"
+    },
+    "Second Brain/Mata Pelajaran/Fisika": {
+      "icon": "lucide-atom",
+      "color": "purple"
+    },
+    "Second Brain/Mata Pelajaran/Geografi": {
+      "icon": "🌎"
+    },
+    "Second Brain/Mata Pelajaran/Informatika": {
+      "icon": "lucide-message-square-code",
+      "color": "cyan"
+    },
+    "Second Brain/Mata Pelajaran/Kimia": {
+      "icon": "⚗️"
+    },
+    "Second Brain/Mata Pelajaran/Matematika": {
+      "icon": "lucide-square-sigma",
+      "color": "red"
+    },
+    "Second Brain/Mata Pelajaran/Olahraga": {
+      "icon": "🏅"
+    },
+    "Second Brain/Mata Pelajaran/Pendidikan Islam": {
+      "icon": "🕋"
+    },
+    "Second Brain/Mata Pelajaran/Sejarah": {
+      "icon": "lucide-landmark",
+      "color": "gray"
+    },
+    "Second Brain/Mata Pelajaran/Seni Budaya": {
+      "icon": "🎨"
+    },
+    "Second Brain/Mata Pelajaran/Sosiologi": {
+      "icon": "👥",
+      "color": "green"
+    },
+    "Second Brain/Skill": {
+      "icon": "💪"
+    },
+    "Second Brain/Skill/Cooking.md": {
+      "icon": "🍴"
+    },
+    "Second Brain/Skill/Design.md": {
+      "icon": "lucide-paintbrush"
+    },
+    "Second Brain/Skill/Fotography.md": {
+      "icon": "📷"
+    },
+    "Second Brain/Skill/Keuangan.md": {
+      "icon": "🤑"
+    },
+    "Second Brain/Skill/Musik": {
+      "icon": "🎶"
+    },
+    "Second Brain/Skill/Planning.md": {
+      "icon": "lucide-presentation",
+      "color": "blue"
+    },
+    "Second Brain/Skill/Self Development.md": {
+      "icon": "👨‍💻"
+    },
+    "Second Brain/Skill/Videography.md": {
+      "icon": "📹"
+    },
+    "Second Brain/Skill/Writing.md": {
+      "icon": "✍️"
+    },
+    "Second Brain/Wawasan": {
+      "icon": "🤔"
+    },
+    "Second Brain/Wawasan/Competition": {
+      "icon": "🥇"
+    },
+    "Second Brain/Wawasan/Device": {
+      "icon": "lucide-monitor-smartphone",
+      "color": "blue"
+    },
+    "Second Brain/Wawasan/Device/Handphone.md": {
+      "icon": "📱"
+    },
+    "Second Brain/Wawasan/Device/Komputer.md": {
+      "icon": "🖥️"
+    },
+    "Second Brain/Wawasan/Device/Laptop.md": {
+      "icon": "💻"
+    },
+    "Second Brain/Wawasan/Device/Mic.md": {
+      "icon": "🎤"
+    },
+    "Second Brain/Wawasan/Device/Speaker.md": {
+      "icon": "lucide-speaker"
+    },
+    "Second Brain/Wawasan/Device/Tablet.md": {
+      "icon": "lucide-tablet"
+    },
+    "Second Brain/Wawasan/Game.md": {
+      "icon": "👾"
+    },
+    "Second Brain/Wawasan/Kehidupan.md": {
+      "icon": "😊"
+    },
+    "Second Brain/Wawasan/Kendaraan": {
+      "icon": "🛻"
+    },
+    "Second Brain/Wawasan/Kuliah": {
+      "icon": "lucide-university",
+      "color": "cyan"
+    },
+    "Second Brain/Wawasan/Medical.md": {
+      "icon": "🩻"
+    },
+    "Second Brain/Wawasan/Negara Internasional": {
+      "icon": "🌐"
+    },
+    "Second Brain/Wawasan/Outfit.md": {
+      "icon": "👠"
+    },
+    "Second Brain/Wawasan/Pekerjaan.md": {
+      "icon": "🧳"
+    },
+    "Second Brain/Wawasan/Perusahaan.md": {
+      "icon": "🏤"
+    },
+    "Second Brain/Wawasan/Reading Book.md": {
+      "icon": "📖"
+    },
+    "Tags": {
+      "icon": "#️⃣"
+    },
+    "Template": {
+      "icon": "lucide-layout-template"
+    },
+    "copilot": {
+      "icon": "🤖"
+    }
+  },
+  "bookmarkIcons": {},
+  "tagIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {},
+  "fileRules": [
+    {
+      "id": "o1IOy",
+      "name": "Aturan",
+      "match": "all",
+      "conditions": [
+        {
+          "source": "name",
+          "operator": "contains"
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "folderRules": []
+}
