@@ -5,6 +5,7 @@
 - tentang negara, bahasa, budaya semuanya
 - berisi tentang kuliah, Perguruan tinggi apa saja di dunia dan perbedaannya
 - ada skill, ada soft skill dan hard skill, nanti dijelasin satu2 ada wawasan, dijelasin satu2asin satu2
+begini
 
 
 B4X
