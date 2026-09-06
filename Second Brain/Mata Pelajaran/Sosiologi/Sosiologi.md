@@ -1,1 +1,2 @@
-sjsji
+sj
+Membahas sosial, analisis
