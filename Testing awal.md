@@ -1,1 +1,2 @@
 kopdar
+mana ieu teh
