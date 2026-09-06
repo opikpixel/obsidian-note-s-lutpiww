@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Second Brain/Wawasan/Competition/{{folder_name}}.md",
+                "file": "Second Brain/Wawasan/Game.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "{{folder_name}}"
+              "title": "Game"
             }
           }
         ]
@@ -212,7 +212,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 364.5
+    "width": 364.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -234,6 +235,7 @@
   },
   "active": "2de5373627a59fc0",
   "lastOpenFiles": [
+    "Second Brain/Wawasan/Competition/{{folder_name}}.md",
     "Testing awal.md",
     "Second Brain/Mata Pelajaran/Sosiologi/Sosiologi.md",
     "Dashboard.md",
@@ -260,7 +262,6 @@
     "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/Java.md",
     "Second Brain/Mata Pelajaran/Informatika/Cyber Security/Cyber Security.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan Biomedis.md",
-    "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan  K3.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
     "Second Brain/Mata Pelajaran/Biologi",
