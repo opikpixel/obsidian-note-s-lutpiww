@@ -196,14 +196,23 @@
               "icon": "lucide-ghost",
               "title": "copilot-agent-chat-view"
             }
+          },
+          {
+            "id": "fef0891ec78f6a98",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 364.5,
-    "collapsed": true
+    "width": 364.5
   },
   "left-ribbon": {
     "hiddenItems": {
