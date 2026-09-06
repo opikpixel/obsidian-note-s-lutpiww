@@ -7,6 +7,7 @@
 - ada skill, ada soft skill dan hard skill, nanti dijelasin satu2 ada wawasan, dijelasin satu2asin satu2
 begini
 
+Yap 
 
 B4X
 

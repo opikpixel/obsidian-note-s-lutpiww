@@ -4,38 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "64d289b86a5e5395",
+        "id": "770c4e3f6d7c81f4",
         "type": "tabs",
         "children": [
           {
-            "id": "4e8520deab7e7223",
+            "id": "ed687372d631337f",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "Project Lutpiw/Catatan Web Aplikasi/Daftar List Web aplikasi.base",
-                "viewName": "Web"
-              },
-              "icon": "lucide-table",
-              "title": "Daftar List Web aplikasi"
-            }
-          },
-          {
-            "id": "f06d167f39c1219f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Second Brain/Skill/Writing.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Writing"
+              "title": "Tab baru"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -119,7 +101,7 @@
         }
       },
       {
-        "id": "d214b033f6651cb8",
+        "id": "7f81f7e29fe4e1ec",
         "type": "leaf",
         "state": {
           "type": "mk-path-view",
@@ -129,7 +111,7 @@
         }
       }
     ],
-    "currentTab": 5
+    "currentTab": 0
   },
   "right": {
     "id": "a943ac3233c9a702",
@@ -188,27 +170,31 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "remotely-save:Remotely Save": false,
-      "obsidian-importer:Import notes": false,
       "publish:Publikasikan perubahan": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Buka peralih cepat": false,
       "graph:Buka tampilan grafik": false,
       "canvas:Buat kanvas baru": false,
-      "daily-notes:Buka catatan hari ini": false,
       "templates:Masukkan template": false,
       "command-palette:Buka palet perintah": false,
-      "bases:Buat basis baru": false,
+      "workspaces:Kelola tata letak ruang kerja": false,
       "iconic:Buka buku aturan": false,
       "templater-obsidian:Templater": false,
-      "workspaces:Kelola tata letak ruang kerja": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-importer:Import notes": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "copilot:Open Copilot Chat": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f06d167f39c1219f",
+  "active": "0984512f9b6b5724",
   "lastOpenFiles": [
     "Dashboard.md",
-    "Vault.md",
+    "Testinggg.md",
+    "Testing awal.md",
+    "Testing",
     "Second Brain/Skill/Writing.md",
+    "Tags",
+    "Vault.md",
     "Second Brain/Skill/Planning.md",
     "Second Brain/Skill/Cooking.md",
     "Second Brain/Wawasan/Negara Internasional/Australian.md",
@@ -231,8 +217,6 @@
     "Second Brain/Mata Pelajaran/Matematika.md",
     "Second Brain/Mata Pelajaran/Kimia.md",
     "Second Brain/Mata Pelajaran/Biologi.md",
-    "Project Lutpiw/Catatan Keuangan.md",
-    "Project Lutpiw/Informasi Pribadi.md",
     "Second Brain/Wawasan/Kendaraan",
     "Second Brain/Wawasan/Negara Internasional",
     "Second Brain/Wawasan/Kuliah/Jurusan/Sosial/Sosial.canvas",
@@ -240,8 +224,6 @@
     "Second Brain/Wawasan/Kuliah/Jurusan/Pendidikan",
     "Second Brain/Wawasan/Kuliah/Jurusan/Humaniora",
     "Second Brain/Wawasan/Kuliah/Jurusan/Seni",
-    "Second Brain/Wawasan/Kuliah/Jurusan/Teknologi",
-    "Second Brain/Wawasan/Kuliah/Jurusan/Kesehatan",
-    "Second Brain/Wawasan/Kuliah/Jurusan/Sosial"
+    "Second Brain/Wawasan/Kuliah/Jurusan/Teknologi"
   ]
 }
