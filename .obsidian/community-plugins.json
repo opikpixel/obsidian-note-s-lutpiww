@@ -4,9 +4,9 @@
   "dragger",
   "templater-obsidian",
   "table-editor-obsidian",
-  "obsidian-importer",
   "obsidian-excalidraw-plugin",
   "copilot",
   "make-md",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-columns"
 ]
