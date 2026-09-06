@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 229.5,
+    "collapsed": true
   },
   "right": {
     "id": "c0e4e696a9963059",
@@ -233,7 +234,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6aa1ba9ea0950cfe",
+  "active": "2de5373627a59fc0",
   "lastOpenFiles": [
     "Second Brain/Skill/Cooking.md",
     "Second Brain/Skill/Music.md",
