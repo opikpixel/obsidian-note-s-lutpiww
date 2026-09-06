@@ -21,4 +21,17 @@
 > 19. Sore
 > 20. White Shoes & The Couples Company
 > 21. Pamungkas
+> 22. The Panturas
+> 23. Hindia
+> 24. Nadin Amizah
+> 25. Tulus
+> 26. Afgan
 
+
+> [!NOTE] Genre Musik
+> 1. Pop 
+> 2. Indie
+> 3. Hip Hop
+> 4. Rock
+> 5. Metal
+> 6. Punk
