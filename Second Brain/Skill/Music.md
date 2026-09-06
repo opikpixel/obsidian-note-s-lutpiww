@@ -35,3 +35,11 @@
 > 4. Rock
 > 5. Metal
 > 6. Punk
+> 7. Jazz
+> 8. Blues
+> 9. Reggae
+> 10. EDM
+> 11. Gosepl & Nasyid
+> 12. KAsidah & Gambus
+> 13. Tradiosional : Gamelan, Angklung, Sasando, Keroncong, jaipongan
+
