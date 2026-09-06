@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Testing awal.md",
+                "file": "Second Brain/Mata Pelajaran/Sosiologi/Sosiologi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Testing awal"
+              "title": "Sosiologi"
             }
           }
         ]
@@ -234,8 +234,8 @@
   },
   "active": "2de5373627a59fc0",
   "lastOpenFiles": [
-    "Dashboard.md",
     "Testing awal.md",
+    "Dashboard.md",
     "Project Lutpiw/Informasi Pribadi.md",
     "Second Brain/Mata Pelajaran/Informatika/Artificial Intelligence.md",
     "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
