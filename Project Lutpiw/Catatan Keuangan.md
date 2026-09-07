@@ -1,7 +1,17 @@
+
+> [!NOTE] Barang Berharga
+> sepatu pdl 82.000
+> Sepatu pdl Jeruk 100.000
+> baju timnas 100.000
+> baju persib 45.000
+> tas kalcer korean 65.000
+> Flashdisk
+
+
+
 775.000 kursus mobil
-sepatu pdl 82.000
-tas kalcer korean 65.000
+
+
 10.000 infak masjid pusdai 
-baju timnas 100.000
-baju persib 45.000
+
 bendera persib 15.000
