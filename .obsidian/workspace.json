@@ -20,8 +20,33 @@
               "icon": "lucide-file",
               "title": "Catatan Belajar"
             }
+          },
+          {
+            "id": "36c86d74c36108c5",
+            "type": "leaf",
+            "state": {
+              "type": "mk-uri-view",
+              "state": {
+                "path": "https://www.make.md/static/latest.md"
+              },
+              "icon": "lucide-file",
+              "title": "https://www.make.md/static/latest.md"
+            }
+          },
+          {
+            "id": "99951076bc4677c7",
+            "type": "leaf",
+            "state": {
+              "type": "mk-uri-view",
+              "state": {
+                "path": "https://www.make.md/static/GetStarted.md"
+              },
+              "icon": "lucide-file",
+              "title": "https://www.make.md/static/GetStarted.md"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -80,7 +105,7 @@
             }
           },
           {
-            "id": "e45590431acfb043",
+            "id": "5cfa7eff81848eaf",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -232,8 +257,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2de5373627a59fc0",
+  "active": "99951076bc4677c7",
   "lastOpenFiles": [
+    "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",
+    "conflict-files-obsidian-git.md",
+    "Tanpa judul.md",
+    "Catatan Cepat/Ide catatan obsidian.md",
     "Second Brain/Skill/Music.md",
     "Second Brain/Skill/Cooking.md",
     "Second Brain/Wawasan/Competition/{{folder_name}}.md",
@@ -250,7 +279,6 @@
     "Second Brain/Mata Pelajaran/Informatika/Cloud Services.md",
     "Second Brain/Mata Pelajaran/Geografi/Geografi.md",
     "Project Lutpiw/Catatan Belajar/link github.md",
-    "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",
     "Second Brain/Mata Pelajaran/Informatika/Arsitektur & Algoritma.md",
     "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/{{folder_name}}.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Teknologi/Teknik Informatika .md",
@@ -258,9 +286,6 @@
     "Catatan Cepat/Agentic Harness.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kendaraan/{{folder_name}}.md",
-    "Second Brain/Wawasan/Kuliah/Tugas Akhir.md",
-    "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/SQL.md",
-    "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/PHP.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
     "Second Brain/Mata Pelajaran/Biologi",
