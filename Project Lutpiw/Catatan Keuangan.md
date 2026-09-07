@@ -5,7 +5,9 @@
 > baju timnas 100.000
 > baju persib 45.000
 > tas kalcer korean 65.000
-> Flashdisk
+> Flashdisk 3pcs 70.000
+> Jaket Hijau 80.
+> Baju Polo Coklat 80.000
 
 
 
