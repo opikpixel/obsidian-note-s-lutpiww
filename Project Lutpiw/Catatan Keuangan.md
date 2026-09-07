@@ -6,14 +6,13 @@
 > baju persib 45.000
 > tas kalcer korean 65.000
 > Flashdisk 3pcs 70.000
-> Jaket Hijau 80.
+> Jaket Hijau 80.000
 > Baju Polo Coklat 80.000
+> Kipas Angin
+> 
 
 
 
 775.000 kursus mobil
-
-
 10.000 infak masjid pusdai 
-
 bendera persib 15.000
