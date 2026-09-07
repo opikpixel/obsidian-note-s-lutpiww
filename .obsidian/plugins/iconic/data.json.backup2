@@ -32,9 +32,6 @@
     "/": {
       "icon": "📔"
     },
-    "Dashboard.md": {
-      "icon": "lucide-brush-cleaning"
-    },
     "Project Lutpiw": {
       "icon": "lucide-briefcase-business",
       "color": "orange"

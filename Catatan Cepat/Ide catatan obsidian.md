@@ -1,0 +1,1 @@
+- tentang perbedaan windows PowerShell, command prompt
