@@ -43,7 +43,6 @@
     "//Project Lutpiw/Project Lutpiw/Catatan Web Aplikasi",
     "//Notion/Notion/Web, Apk & AI",
     "//Second Brain/Second Brain/Wawasan",
-    "//Second Brain/Second Brain/Mata Pelajaran",
     "//Second Brain/Second Brain/Wawasan/Second Brain/Wawasan/Kuliah/Second Brain/Wawasan/Kuliah/Fakultas",
     "//Second Brain/Second Brain/Skill",
     "//Second Brain/Second Brain/Mata Pelajaran/Second Brain/Mata Pelajaran/Biologi",
@@ -51,7 +50,16 @@
     "//Second Brain/Second Brain/Mata Pelajaran/Second Brain/Mata Pelajaran/Fisika",
     "//Second Brain/Second Brain/Mata Pelajaran/Second Brain/Mata Pelajaran/Informatika",
     "/",
+<<<<<<< HEAD
     "//Second Brain/Second Brain/Wawasan/Second Brain/Wawasan/Negara Internasional"
+=======
+    "//Second Brain/Second Brain/Wawasan/Second Brain/Wawasan/Negara Internasional",
+    "//Second Brain",
+    "//Second Brain/Second Brain/Skill/Second Brain/Skill/Musik",
+    "//Catatan Cepat",
+    "//Project Lutpiw",
+    "//Project Lutpiw/Project Lutpiw/Catatan Belajar"
+>>>>>>> 05847ac66d96f3fa25efcb5c14814838d640b847
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

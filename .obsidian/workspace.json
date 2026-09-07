@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dashboard.md",
+                "file": "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dashboard"
+              "title": "Catatan Belajar"
             }
           }
         ]
@@ -80,7 +80,7 @@
             }
           },
           {
-            "id": "25d09bf092592764",
+            "id": "e45590431acfb043",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -196,14 +197,23 @@
               "icon": "lucide-ghost",
               "title": "copilot-agent-chat-view"
             }
+          },
+          {
+            "id": "fef0891ec78f6a98",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 364.5,
-    "collapsed": true
+    "width": 255.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,7 +227,6 @@
       "iconic:Open rulebook": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-importer:Import notes": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "copilot:Open Copilot Agent Chat": false,
       "obsidian-git:Open Git source control": false
@@ -225,6 +234,15 @@
   },
   "active": "2de5373627a59fc0",
   "lastOpenFiles": [
+    "Second Brain/Skill/Music.md",
+    "Second Brain/Skill/Cooking.md",
+    "Second Brain/Wawasan/Competition/{{folder_name}}.md",
+    "Second Brain/Wawasan/Medical.md",
+    "Second Brain/Wawasan/Kehidupan.md",
+    "Second Brain/Wawasan/Game.md",
+    "Testing awal.md",
+    "Second Brain/Mata Pelajaran/Sosiologi/Sosiologi.md",
+    "Dashboard.md",
     "Project Lutpiw/Informasi Pribadi.md",
     "Second Brain/Mata Pelajaran/Informatika/Artificial Intelligence.md",
     "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
@@ -236,22 +254,13 @@
     "Second Brain/Mata Pelajaran/Informatika/Arsitektur & Algoritma.md",
     "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/{{folder_name}}.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Teknologi/Teknik Informatika .md",
-    "Second Brain/Wawasan/Kehidupan.md",
     "Catatan Cepat/Growth Mindset.md",
     "Catatan Cepat/Agentic Harness.md",
-    "Dashboard.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kendaraan/{{folder_name}}.md",
     "Second Brain/Wawasan/Kuliah/Tugas Akhir.md",
     "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/SQL.md",
     "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/PHP.md",
-    "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/C++.md",
-    "Second Brain/Mata Pelajaran/Informatika/Bahasa Informatika/Java.md",
-    "Second Brain/Mata Pelajaran/Informatika/Cyber Security/Cyber Security.md",
-    "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan Biomedis.md",
-    "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan  K3.md",
-    "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan Gizi.md",
-    "Second Brain/Wawasan/Kuliah/Fakultas/Kesehatan/Jurusan Farmasi.md",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
     "Second Brain/Mata Pelajaran/Biologi",
