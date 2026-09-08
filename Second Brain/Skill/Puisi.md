@@ -1,3 +1,6 @@
+---
+sticker: ""
+---
 
 > [!NOTE] SEBELUM LAUT BERTEMU LANGIT
 > karya : Eka Budianta
