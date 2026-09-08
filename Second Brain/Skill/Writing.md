@@ -5,8 +5,6 @@
 - Disertai
 - kata kata bijak
 - qoute
-- aku
-- kamu
 - 
 
 ---
