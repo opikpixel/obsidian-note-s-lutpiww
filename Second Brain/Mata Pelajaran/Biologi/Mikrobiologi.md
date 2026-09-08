@@ -4,7 +4,7 @@ created: 2026-08-20
 aliases:
   - microbiology
   - mikroba
-banner:
+banner: https://i.pinimg.com/1200x/dd/d1/1d/ddd11d60279911ddeda0734161551d33.jpg
 ---
 
 # Mikrobiologi
