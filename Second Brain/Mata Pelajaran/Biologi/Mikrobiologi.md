@@ -1,13 +1,10 @@
-﻿---
-tags:
-  - biologi
-  - mikrobiologi
-  - bakteri
-  - virus
-  - jamur
-  - protista
+---
+tags: []
 created: 2026-08-20
-aliases: [microbiology, mikroba]
+aliases:
+  - microbiology
+  - mikroba
+banner:
 ---
 
 # Mikrobiologi
