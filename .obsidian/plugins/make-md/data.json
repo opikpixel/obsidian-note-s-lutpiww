@@ -38,7 +38,9 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/"
+    "/",
+    "//Second Brain",
+    "//Second Brain/Second Brain/Wawasan"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

@@ -2,7 +2,10 @@
 - masker
 - baju
 - celana
-- Sepatu
+
+> [!NOTE] Sepatu
+> unerd, kanky, specs, 910
+
 - sendal
 - kaos kaki
 - tas
@@ -15,7 +18,7 @@
 > - Hoodie
 > - 
 
-- 
+
 - ---
 - Merek
 - Jenis 
