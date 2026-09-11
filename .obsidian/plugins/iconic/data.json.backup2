@@ -35,6 +35,9 @@
     "Catatan Cepat": {
       "icon": "⏩"
     },
+    "Dashboard.md": {
+      "icon": "🏡"
+    },
     "Project Lutpiw": {
       "icon": "lucide-briefcase-business",
       "color": "orange"
@@ -110,6 +113,9 @@
     "Second Brain/Skill/Planning.md": {
       "icon": "lucide-presentation",
       "color": "blue"
+    },
+    "Second Brain/Skill/Puisi.md": {
+      "icon": "🙋‍♀️"
     },
     "Second Brain/Skill/Self Development.md": {
       "icon": "👨‍💻"
