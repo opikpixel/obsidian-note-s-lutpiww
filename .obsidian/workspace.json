@@ -11,12 +11,14 @@
             "id": "796b1470865ec5a8",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Project Lutpiw/Catatan Web Aplikasi/List Tools"
+                "file": "Dashboard.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "List Tools"
+              "title": "Dashboard"
             }
           }
         ]
@@ -87,8 +89,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -230,7 +231,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6aa1ba9ea0950cfe",
+  "active": "796b1470865ec5a8",
   "lastOpenFiles": [
     "Second Brain/Wawasan/Outfit.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
