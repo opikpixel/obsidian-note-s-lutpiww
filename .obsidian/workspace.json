@@ -11,14 +11,12 @@
             "id": "796b1470865ec5a8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
-                "mode": "source",
-                "source": false
+                "path": "Second Brain/Mata Pelajaran/Informatika"
               },
               "icon": "lucide-file",
-              "title": "{{folder_name}}"
+              "title": "Informatika"
             }
           }
         ]
@@ -234,6 +232,8 @@
   },
   "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Second Brain/Mata Pelajaran/Informatika/Databases.md",
+    "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
     "Dashboard.md",
     "Second Brain/Wawasan/Outfit.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
@@ -258,8 +258,6 @@
     "Testing awal.md",
     "Tanpa judul.md",
     "conflict-files-obsidian-git.md",
-    "Second Brain/Skill/Music.md",
-    "Second Brain/Wawasan/Competition/{{folder_name}}.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
