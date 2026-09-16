@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dashboard.md",
+                "file": "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dashboard"
+              "title": "{{folder_name}}"
             }
           }
         ]
@@ -89,7 +89,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -233,12 +234,12 @@
   },
   "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Dashboard.md",
     "Second Brain/Wawasan/Outfit.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah.md",
     "Project Lutpiw/Catatan Keuangan.md",
     "Project Lutpiw/Informasi Pribadi.md",
-    "Dashboard.md",
     "Second Brain/Wawasan/Kehidupan.md",
     "Second Brain/Skill/Cooking.md",
     "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",

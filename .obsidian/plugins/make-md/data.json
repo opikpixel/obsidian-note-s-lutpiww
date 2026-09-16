@@ -39,11 +39,11 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Second Brain",
-    "//Second Brain/Second Brain/Wawasan",
-    "//Project Lutpiw",
     "//Project Lutpiw/Project Lutpiw/Catatan Web Aplikasi",
-    "//Project Lutpiw/Project Lutpiw/Catatan Web Aplikasi/Project Lutpiw/Catatan Web Aplikasi/List Tools"
+    "//Project Lutpiw/Project Lutpiw/Catatan Web Aplikasi/Project Lutpiw/Catatan Web Aplikasi/List Tools",
+    "//Second Brain",
+    "//Second Brain/Second Brain/Mata Pelajaran",
+    "//Second Brain/Second Brain/Mata Pelajaran/Second Brain/Mata Pelajaran/Informatika"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
