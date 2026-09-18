@@ -87,12 +87,11 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 229.5
+    "width": 200
   },
   "right": {
     "id": "c0e4e696a9963059",
@@ -211,7 +210,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 224.5
+    "width": 224.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -230,7 +230,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "796b1470865ec5a8",
+  "active": "6aa1ba9ea0950cfe",
   "lastOpenFiles": [
     "Second Brain/Mata Pelajaran/Informatika/Databases.md",
     "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
