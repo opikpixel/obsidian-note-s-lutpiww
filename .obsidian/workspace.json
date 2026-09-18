@@ -13,10 +13,10 @@
             "state": {
               "type": "mk-space",
               "state": {
-                "path": "Second Brain/Mata Pelajaran/Informatika"
+                "path": "Project Lutpiw/Catatan Web Aplikasi/List Tools"
               },
               "icon": "lucide-file",
-              "title": "Informatika"
+              "title": "List Tools"
             }
           }
         ]
@@ -230,15 +230,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6aa1ba9ea0950cfe",
+  "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Project Lutpiw/Catatan Keuangan.md",
     "Second Brain/Mata Pelajaran/Informatika/Databases.md",
     "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
     "Dashboard.md",
     "Second Brain/Wawasan/Outfit.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah.md",
-    "Project Lutpiw/Catatan Keuangan.md",
     "Project Lutpiw/Informasi Pribadi.md",
     "Second Brain/Wawasan/Kehidupan.md",
     "Second Brain/Skill/Cooking.md",
