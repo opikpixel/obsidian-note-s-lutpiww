@@ -593,15 +593,6 @@
       },
       "configuredModelId": "e9c7fe04-174e-44d3-9236-8ce41e5510a4",
       "configuredAt": 1788409627874
-    },
-    {
-      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
-      "info": {
-        "id": "opencode/union-alpha",
-        "displayName": "OpenCode Zen/Union Alpha Free"
-      },
-      "configuredModelId": "3da5e3d4-d185-4678-8671-3214f48d0278",
-      "configuredAt": 1789590503755
     }
   ],
   "backends": {
