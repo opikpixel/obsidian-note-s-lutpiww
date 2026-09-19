@@ -11,12 +11,14 @@
             "id": "796b1470865ec5a8",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Project Lutpiw/Catatan Web Aplikasi/List Tools"
+                "file": "Catatan Cepat/Ide catatan obsidian.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "List Tools"
+              "title": "Ide catatan obsidian"
             }
           }
         ]
@@ -87,8 +89,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -233,14 +234,17 @@
   },
   "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Catatan Cepat/Growth Mindset.md",
+    "Catatan Cepat/Agentic Harness.md",
+    "Dashboard.md",
+    "Project Lutpiw/Informasi Pribadi.md",
+    "Project Lutpiw/Catatan Belajar/link github.md",
     "Project Lutpiw/Catatan Keuangan.md",
     "Second Brain/Mata Pelajaran/Informatika/Databases.md",
     "Second Brain/Mata Pelajaran/Informatika/{{folder_name}}.md",
-    "Dashboard.md",
     "Second Brain/Wawasan/Outfit.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
     "Second Brain/Mata Pelajaran/Sejarah/Sejarah.md",
-    "Project Lutpiw/Informasi Pribadi.md",
     "Second Brain/Wawasan/Kehidupan.md",
     "Second Brain/Skill/Cooking.md",
     "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",
@@ -253,12 +257,9 @@
     "Second Brain/Skill/Puisi.md",
     "Second Brain/Skill/Writing.md",
     "Second Brain/Wawasan/Game.md",
-    "Project Lutpiw/Catatan Belajar/link github.md",
     "Project Lutpiw/Catatan Web Aplikasi/Web, Apk & AI.md",
     "Catatan Cepat/Ide catatan obsidian.md",
     "Testing awal.md",
-    "Tanpa judul.md",
-    "conflict-files-obsidian-git.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
