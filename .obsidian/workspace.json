@@ -80,7 +80,7 @@
             }
           },
           {
-            "id": "01cba2ed2fbe0758",
+            "id": "6758d0fcd86ba57a",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -234,6 +235,7 @@
   },
   "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Tags",
     "Catatan Cepat/Growth Mindset.md",
     "Catatan Cepat/Agentic Harness.md",
     "Dashboard.md",
@@ -259,7 +261,6 @@
     "Second Brain/Wawasan/Game.md",
     "Project Lutpiw/Catatan Web Aplikasi/Web, Apk & AI.md",
     "Catatan Cepat/Ide catatan obsidian.md",
-    "Testing awal.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
