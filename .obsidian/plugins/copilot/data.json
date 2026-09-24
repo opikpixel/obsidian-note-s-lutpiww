@@ -543,15 +543,6 @@
     {
       "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
       "info": {
-        "id": "opencode/mimo-v2.5-free",
-        "displayName": "OpenCode Zen/MiMo V2.5 Free"
-      },
-      "configuredModelId": "63c93dfb-1437-4ceb-ab12-dfa6e1e44c01",
-      "configuredAt": 1787218594316
-    },
-    {
-      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
-      "info": {
         "id": "opencode/muse-spark-1.2-contributor-free",
         "displayName": "OpenCode Zen/Muse Spark 1.2 Free"
       },
@@ -593,6 +584,24 @@
       },
       "configuredModelId": "e9c7fe04-174e-44d3-9236-8ce41e5510a4",
       "configuredAt": 1788409627874
+    },
+    {
+      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
+      "info": {
+        "id": "opencode/mimo-v2.6-flash-free",
+        "displayName": "OpenCode Zen/MiMo-V2.6-Flash Free"
+      },
+      "configuredModelId": "04fbf77e-fd61-490f-849d-8104cd2bf44a",
+      "configuredAt": 1790234138691
+    },
+    {
+      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
+      "info": {
+        "id": "opencode/space-bunny-free",
+        "displayName": "OpenCode Zen/Space Bunny Free"
+      },
+      "configuredModelId": "beb0791b-8cb7-4786-bbf3-22d2cb616a6d",
+      "configuredAt": 1790234138694
     }
   ],
   "backends": {
