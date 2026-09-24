@@ -11,14 +11,12 @@
             "id": "796b1470865ec5a8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "Catatan Cepat/Ide catatan obsidian.md",
-                "mode": "source",
-                "source": false
+                "path": "Project Lutpiw/Catatan Web Aplikasi/List Tools"
               },
               "icon": "lucide-file",
-              "title": "Ide catatan obsidian"
+              "title": "List Tools"
             }
           }
         ]
@@ -89,8 +87,7 @@
               "title": "Navigator"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -233,13 +230,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "796b1470865ec5a8",
+  "active": "6aa1ba9ea0950cfe",
   "lastOpenFiles": [
+    "Project Lutpiw/Informasi Pribadi.md",
+    "Untitled.canvas",
+    "Dashboard.md",
+    "Catatan Cepat/Ide catatan obsidian.md",
     "Tags",
     "Catatan Cepat/Growth Mindset.md",
     "Catatan Cepat/Agentic Harness.md",
-    "Dashboard.md",
-    "Project Lutpiw/Informasi Pribadi.md",
     "Project Lutpiw/Catatan Belajar/link github.md",
     "Project Lutpiw/Catatan Keuangan.md",
     "Second Brain/Mata Pelajaran/Informatika/Databases.md",
@@ -260,7 +259,6 @@
     "Second Brain/Skill/Writing.md",
     "Second Brain/Wawasan/Game.md",
     "Project Lutpiw/Catatan Web Aplikasi/Web, Apk & AI.md",
-    "Catatan Cepat/Ide catatan obsidian.md",
     "Catatan Cepat",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sains",
     "Second Brain/Wawasan/Competition",
@@ -270,7 +268,6 @@
     "Second Brain/Wawasan/Negara Internasional/Belgium",
     "Second Brain/Wawasan/Negara Internasional/Arab Saudian",
     "Second Brain/Wawasan/Negara Internasional/SIngapure",
-    "Second Brain/Wawasan/Negara Internasional/Russian",
     "Second Brain/Wawasan/Kuliah/Fakultas/Sosial/Sosial.canvas",
     "Web, Apk & AI.jpeg"
   ]
