@@ -11,12 +11,10 @@
             "id": "796b1470865ec5a8",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "Project Lutpiw/Catatan Web Aplikasi/List Tools"
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "List Tools"
+              "title": "New tab"
             }
           }
         ]
@@ -231,7 +229,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6aa1ba9ea0950cfe",
+  "active": "adc88579e4c5f6f6",
   "lastOpenFiles": [
     "Project Lutpiw/Informasi Pribadi.md",
     "Untitled.canvas",
