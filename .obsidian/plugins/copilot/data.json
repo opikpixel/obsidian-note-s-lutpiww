@@ -543,15 +543,6 @@
     {
       "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
       "info": {
-        "id": "opencode/muse-spark-1.2-contributor-free",
-        "displayName": "OpenCode Zen/Muse Spark 1.2 Free"
-      },
-      "configuredModelId": "bccab22a-d287-483f-b10b-c14cc3ec4408",
-      "configuredAt": 1787218594317
-    },
-    {
-      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
-      "info": {
         "id": "opencode/nemotron-3-ultra-free",
         "displayName": "OpenCode Zen/Nemotron 3 Ultra Free"
       },
@@ -602,6 +593,15 @@
       },
       "configuredModelId": "beb0791b-8cb7-4786-bbf3-22d2cb616a6d",
       "configuredAt": 1790234138694
+    },
+    {
+      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
+      "info": {
+        "id": "opencode/longcat-2.5-preview-free",
+        "displayName": "OpenCode Zen/LongCat 2.5 Preview Free"
+      },
+      "configuredModelId": "ef60e993-ba46-4d47-a5cd-e53323e9f306",
+      "configuredAt": 1790711923088
     }
   ],
   "backends": {
