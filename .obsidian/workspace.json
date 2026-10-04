@@ -80,7 +80,7 @@
             }
           },
           {
-            "id": "adc88579e4c5f6f6",
+            "id": "f9da6ededfdd5dda",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -233,13 +234,13 @@
   },
   "active": "796b1470865ec5a8",
   "lastOpenFiles": [
+    "Tags",
     "Second Brain/Wawasan/Kehidupan.md",
     "Project Lutpiw/Catatan Belajar/Catatan Belajar.md",
     "Untitled.canvas",
     "Project Lutpiw/Informasi Pribadi.md",
     "Dashboard.md",
     "Catatan Cepat/Ide catatan obsidian.md",
-    "Tags",
     "Catatan Cepat/Growth Mindset.md",
     "Catatan Cepat/Agentic Harness.md",
     "Project Lutpiw/Catatan Belajar/link github.md",

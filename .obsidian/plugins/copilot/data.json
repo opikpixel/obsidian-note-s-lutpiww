@@ -602,6 +602,24 @@
       },
       "configuredModelId": "ef60e993-ba46-4d47-a5cd-e53323e9f306",
       "configuredAt": 1790711923088
+    },
+    {
+      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
+      "info": {
+        "id": "opencode/fledge-alpha-free",
+        "displayName": "OpenCode Zen/Fledge Alpha Free"
+      },
+      "configuredModelId": "bbbfd510-f573-4ee7-98f9-b9f0dffd4345",
+      "configuredAt": 1791154423145
+    },
+    {
+      "providerId": "c7821cc4-819e-4b8b-b5b0-120a20cd11d2",
+      "info": {
+        "id": "opencode/ling-3.1-flash-free",
+        "displayName": "OpenCode Zen/Ling 3.1 Flash Free"
+      },
+      "configuredModelId": "37b71280-ff8c-4c4c-85fc-bedff6a6100a",
+      "configuredAt": 1791154423151
     }
   ],
   "backends": {
