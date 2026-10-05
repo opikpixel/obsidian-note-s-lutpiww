@@ -92,6 +92,37 @@
     "Skill": {
       "icon": "💪"
     },
+    "Skill/Cooking.md": {
+      "icon": "🍴"
+    },
+    "Skill/Design.md": {
+      "icon": "lucide-paintbrush"
+    },
+    "Skill/Fotography.md": {
+      "icon": "📷"
+    },
+    "Skill/Keuangan.md": {
+      "icon": "🤑"
+    },
+    "Skill/Music.md": {
+      "icon": "🎶"
+    },
+    "Skill/Planning.md": {
+      "icon": "lucide-presentation",
+      "color": "blue"
+    },
+    "Skill/Puisi.md": {
+      "icon": "🙋‍♀️"
+    },
+    "Skill/Self Development.md": {
+      "icon": "👨‍💻"
+    },
+    "Skill/Videography.md": {
+      "icon": "📹"
+    },
+    "Skill/Writing.md": {
+      "icon": "✍️"
+    },
     "Template": {
       "icon": "lucide-layout-template"
     },
@@ -156,37 +187,6 @@
     },
     "copilot": {
       "icon": "🤖"
-    },
-    "Skill/Cooking.md": {
-      "icon": "🍴"
-    },
-    "Skill/Fotography.md": {
-      "icon": "📷"
-    },
-    "Skill/Design.md": {
-      "icon": "lucide-paintbrush"
-    },
-    "Skill/Music.md": {
-      "icon": "🎶"
-    },
-    "Skill/Planning.md": {
-      "icon": "lucide-presentation",
-      "color": "blue"
-    },
-    "Skill/Keuangan.md": {
-      "icon": "🤑"
-    },
-    "Skill/Puisi.md": {
-      "icon": "🙋‍♀️"
-    },
-    "Skill/Videography.md": {
-      "icon": "📹"
-    },
-    "Skill/Self Development.md": {
-      "icon": "👨‍💻"
-    },
-    "Skill/Writing.md": {
-      "icon": "✍️"
     }
   },
   "bookmarkIcons": {},
