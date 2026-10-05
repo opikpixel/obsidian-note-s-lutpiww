@@ -30,7 +30,25 @@
 > - aku kayaknya flu deh, fluing with you
 > - sabar2 mulai dari mana tadi? mulai dari menata hidup baru denganku
 > - Gokil, yang komen suhu semua, kita bagian notnton saja, jadi kapan kita jalan terus nonton?
-> - 
+> - ya kalau pinter meluluh lantahkan hati aku itu kan kamu
+> - stok gombal banyak, apalagi stok mencintaimu
+> - kamu nyiram pupuk ya? kok aku berbunga-bunga sih
+> - aduh lagi sibuk, sibuk ngurus dokumen kita di KUA
+> - bensin sama kamu, kalau bensin lama abis, kalau kamu lama nambah manis
+> - yang kanan estetik, yang kiri fantastik, yang tengah namanya siapa cantik?
+> - kukira a day in my life, ternyata a day my wife
+> - kayak pernah ketemu? kapan? kebetukan sabtu minggu free
+> - aku bukan pemain dan kamu ga bagus dimainin, gimana kalau aku manjain
+> - terlalu lebay, ga cocok buat umur muda, cocoknya langsung saja nikah
+> - sama kak, aku juga ga sanggup hidup ga ada kamu disisiku
+> - Sbeenarnya ada yang lebih lucu, anak kita
+> - maksudnya apa? aku ga rela kalau ada yang lebih lucu daripada kamu
+> - ga belajar dari mana2, kan semuanya dah ada di kamu
+> - salting atau takut asing?
+> - aku juga gemetaran, bisa liat bidadari beneran
+> - jangan banyak dicatet, cukup catet nama kita saja di KUA
+> - coba jangan diliatin aku kayak gitu, aku lagi nyoba fokus dan kamu itu tipe gangguan yang paling susah buat diabaikan
+
 
 
 
