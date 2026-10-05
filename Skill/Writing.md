@@ -5,7 +5,19 @@
 - Disertai
 - kata kata bijak
 - qoute
-- 
+
+> [!NOTE] Gombalan
+> - Kameranya buram, tidak bakal bisa menghilangkan cantikmu yang mempesona
+> - Lagunya enak banget buat didengar, masuk kuping kiri keluar malam minggu bisa?
+> - fotonya burem banyak asap ngebul, tapi kakaknya tetap beautiful
+> - Kamu tidak cocok digombalin, cocoknya diseriusin
+> - Nis, Jadi nis? Jadian
+> - Jangankan lihat komen, lihat kamu saja aku berasa dicintai
+> - Kalau CH3OH itu senyawa, kalau aku sama kamu boleh sehati ga?
+> - eh tadi aku ke dokter, kata dokternya aku kena diabetes, karena terlalu sering melihat senyum manis mu
+
+
+
 
 ---
 

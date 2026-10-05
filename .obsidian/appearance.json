@@ -5,7 +5,7 @@
   "monospaceFontFamily": "Courier New",
   "baseFontSize": 14,
   "baseFontSizeAction": true,
-  "theme": "obsidian",
+  "theme": "moonstone",
   "enabledCssSnippets": [
     "iconis-fix"
   ]
