@@ -3,7 +3,7 @@
   "interfaceFontFamily": "Bahnschrift",
   "textFontFamily": "Georgia",
   "monospaceFontFamily": "Courier New",
-  "baseFontSize": 14,
+  "baseFontSize": 15,
   "baseFontSizeAction": true,
   "theme": "moonstone",
   "enabledCssSnippets": [
