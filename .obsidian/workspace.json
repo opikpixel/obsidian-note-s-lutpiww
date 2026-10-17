@@ -80,7 +80,7 @@
             }
           },
           {
-            "id": "1e7a47b25fd5292e",
+            "id": "0ef6ea82a2fdfec2",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,8 @@
               "title": "Navigator"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -214,7 +215,6 @@
       "command-palette:Open command palette": false,
       "publish:Publish changes...": false,
       "iconic:Open rulebook": false,
-      "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
