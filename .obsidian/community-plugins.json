@@ -10,5 +10,7 @@
   "obsidian-minimal-settings",
   "obsidian-banners",
   "obsidian-outliner",
-  "obsidian-kanban"
+  "obsidian-kanban",
+  "obsidian-local-rest-api",
+  "sync-and-mcp"
 ]
