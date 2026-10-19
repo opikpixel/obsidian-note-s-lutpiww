@@ -48,3 +48,30 @@ Kode berikut menunjukkan proses augmentasi gambar pada setiap sampel di dataset.
 
 8. test_datagen = ImageDataGenerator(
 9.                     rescale=1./255)
+
+
+10. x = -4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0
+11. f(x) = 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0
+
+Sebuah model dari API Keras dapat menerima masukan dengan tipe data numpy array sehingga kita bisa membuat 2 buah objek bertipe numpy array, satu untuk atribut (x) dan satu lagi sebagai labelnya (f(x)). Untuk jenis tipe data lain yang dapat diterima sebagai masukan sebuah model dari API Keras, Anda dapat mengunjungi tautan [berikut](https://www.tensorflow.org/api_docs/python/tf/keras/Model). 
+
+Mari kita mulai dengan melakukan impor library yang akan digunakan seperti kode di bawah ini.
+
+1. import tensorflow as tf
+2. import numpy as np
+3. from tensorflow import keras
+Selanjutnya, kita harus mengubah angka-angka di atas menjadi sebuah larik/array agar dapat diterima oleh Keras sehingga proses pelatihan akan berjalan dengan baik. Kita dapat menggunakan kode berikut untuk mengubahnya menjadi sebuah larik/array.
+
+4. X = np.array([-4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0], dtype=float)
+5. Y = np.array([5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0], dtype=float)
+6. model = tf.keras.Sequential([
+7.     tf.keras.layers.Dense(units=1, input_shape=[1])
+8.     ])
+
+9. model.predict(np.array([4, 5]))
+
+Ketika kita menjalankan kode di atas, hasil yang kita dapat seharusnya adalah 13 dan 14 di mana f(4) = 4 + 9 dan f(5) = 5 + 9. Namun, ketika kita menjalankan kode tersebut, output yang dihasilkan adalah sebagai berikut.
+
+1. 1/1 [==============================] - 0s 40ms/step
+2. array([[12.999903],
+3.        [13.999887]], dtype=float32)
