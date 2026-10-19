@@ -75,3 +75,65 @@ Ketika kita menjalankan kode di atas, hasil yang kita dapat seharusnya adalah 13
 1. 1/1 [==============================] - 0s 40ms/step
 2. array([[12.999903],
 3.        [13.999887]], dtype=float32)
+
+4. # Opsi 1 (menggunakan dataset lokal)
+5. import pandas as pd
+6. df = pd.read_csv('citrus.csv')
+
+7. # Opsi 2 (menggunakan dataset dari google drive)
+8. df = pd.read_csv('https://drive.google.com/uc?id=1XZbZ5Z7MBXYaR3UO1HbQ4ncPi4R3HsyF')
+9. df.head()
+10. df.loc[df['name'] == 'grapefruit', 'name'] = 0
+11. df.loc[df['name'] == 'orange', 'name'] = 1
+12. from sklearn import preprocessing
+
+13. label_encoder = preprocessing.LabelEncoder() 
+14. df['name'] = label_encoder.fit_transform(df['name']) 
+15. print(df)
+16. dataset = df.values
+’’’ pilih 5 kolom terakhir sebagai atribut
+bilangan sebelum koma untuk memilih baris pada dataframe
+bilangan setelah koma untuk memilih kolom pada dataframe ’’’
+X = dataset[:,1:6]
+Jangan lupa untuk memisahkan label dari dataset. Pada dataset kita, label terdapat pada kolom pertama. Jalankan kode di bawah untuk membuat sebuah array numpy yang hanya berisi label kita.
+
+y = dataset[:,0]
+from sklearn import preprocessing
+min_max_scaler = preprocessing.MinMaxScaler()
+X_scale = min_max_scaler.fit_transform(X)
+X_scale
+1. from sklearn.model_selection import train_test_split
+2. X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
+3. model = Sequential([    
+4.                     Dense(32, activation='relu', input_shape=(5,)),    
+5.                     Dense(32, activation='relu'),    
+6.                     Dense(1, activation='sigmoid')])
+
+mport pandas as pd
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from keras.models import Sequential
+from keras.layers import Dense
+Setelah semuanya siap, Anda dapat menambahkan code cell pertama pada notebook yang telah dibuka. Dengan menggunakan pandas untuk kita dapat merubah dataset menjadi sebuah dataframe. Untuk melakukannya, gunakan fungsi read_csv().
+
+df = pd.read_csv('https://drive.google.com/uc?id=1roJ83AbgzDcvRr0Gwud0BmdUQx-oSG-w')
+df.head()
+df = df.drop(columns='Id')
+category = pd.get_dummies(df.Species, dtype=int)
+category
+new_df = pd.concat([df, category], axis=1)
+new_df = new_df.drop(columns='Species')
+new_df
+1. dataset = new_df.values
+2. dataset
+3. min_max_scaler = preprocessing.MinMaxScaler()
+4. X_scale = min_max_scaler.fit_transform(X)
+5. X_scale
+6. X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
+7. model = Sequential([    
+8.                     Dense(64, activation='relu', input_shape=(4,)),    
+9.                     Dense(64, activation='relu'),    
+10.                     Dense(3, activation='softmax')])
+11. model.compile(optimizer='Adam',
+12.               loss='categorical_crossentropy',
+13.               metrics=['accuracy'])
