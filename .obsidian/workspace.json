@@ -80,7 +80,7 @@
             }
           },
           {
-            "id": "0ef6ea82a2fdfec2",
+            "id": "08c1b83c9458c8ae",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -207,6 +207,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "sync-and-mcp:Sync and MCP: sync now": false,
       "workspaces:Manage workspace layouts": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
