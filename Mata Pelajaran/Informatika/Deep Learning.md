@@ -1,3 +1,6 @@
+Istilah
+- plot loss
+## Dropout dan Batch Normalization
 Dengan menggunakan Keras, kita dapat membuat sebuah model machine learning hanya dengan beberapa baris kode seperti berikut.
 ```
 mnist = tf.keras.datasets.fashion_mnist
@@ -137,3 +140,17 @@ new_df
 11. model.compile(optimizer='Adam',
 12.               loss='categorical_crossentropy',
 13.               metrics=['accuracy'])
+
+14. import matplotlib.pyplot as plt
+15. plt.plot(hist.history['loss'])
+16. plt.title('Model loss')
+17. plt.ylabel('Loss')
+18. plt.xlabel('Epoch')
+19. plt.legend(['Train'], loc='upper right')
+20. plt.show()
+21. plt.plot(hist.history['accuracy'])
+22. plt.title('Model accuracy')
+23. plt.ylabel('Accuracy')
+24. plt.xlabel('Epoch')
+25. plt.legend(['Train'], loc='lower right')
+26. plt.show()
