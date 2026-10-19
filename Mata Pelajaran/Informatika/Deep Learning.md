@@ -154,3 +154,17 @@ new_df
 24. plt.xlabel('Epoch')
 25. plt.legend(['Train'], loc='lower right')
 26. plt.show()
+
+from keras.layers import Dense, Dropout
+model = Sequential([
+                    Dense(64, activation='relu', input_shape=(4,)),
+                    Dense(64, activation='relu'),
+                    Dropout(0.5),
+                    Dense(3, activation='softmax')])
+from keras.layers import Dense, Dropout, BatchNormalization
+model = Sequential([
+                    Dense(64, activation='relu', input_shape=(4,)),
+                    Dense(64, activation='relu'),
+                    Dropout(0.5),
+                    BatchNormalization(momentum=0.99),
+                    Dense(3, activation='softmax')])
