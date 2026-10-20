@@ -38,6 +38,10 @@
     "Dashboard.md": {
       "icon": "🏡"
     },
+    "Kuliah": {
+      "icon": "lucide-university",
+      "color": "cyan"
+    },
     "Mata Pelajaran": {
       "icon": "📚"
     },
@@ -156,10 +160,6 @@
     "Wawasan/Kendaraan": {
       "icon": "🛻"
     },
-    "Wawasan/Kuliah": {
-      "icon": "lucide-university",
-      "color": "cyan"
-    },
     "Wawasan/Medical.md": {
       "icon": "🩻"
     },
@@ -177,9 +177,6 @@
     },
     "Wawasan/Reading Book.md": {
       "icon": "📖"
-    },
-    "copilot": {
-      "icon": "🤖"
     }
   },
   "bookmarkIcons": {},
