@@ -1,275 +1,4 @@
-Istilah
-- plot loss
-## Dropout dan Batch Normalization
-Dengan menggunakan Keras, kita dapat membuat sebuah model machine learning hanya dengan beberapa baris kode seperti berikut.
-```
-mnist = tf.keras.datasets.fashion_mnist
- 
-(x_train, y_train), (x_test, y_test) = mnist.load_data()
-x_train, x_test = x_train / 255.0, x_test / 255.0
- 
-model = tf.keras.models.Sequential([
-    tf.keras.layers.Flatten(input_shape=(28, 28)),
-    tf.keras.layers.Dense(512, activation='relu'),
-    tf.keras.layers.Dense(10, activation='softmax')
-])
-model.compile(optimizer = tf.optimizers.Adam(),
-                              loss = ‘sparse_categorical_crossentropy’,
-                              metrics = [‘accuracy’])
-model.fit(x_train, y_train, epochs = 10)
-```
-Berikutnya, mari kita flashback sedikit untuk memperjelas kembali tiga layer utama pada model sequential tersebut.
-
-Input layer
-Layer yang memiliki parameter ‘input_shape’. Input_shape sendiri adalah resolusi dari gambar-gambar pada data latih. Dalam hal ini, sebuah gambar MNIST memiliki resolusi 28x28 piksel sehingga input shape-nya adalah (28, 28). Sebuah layer Flatten pada Keras akan berfungsi untuk meratakan input. Meratakan di sini artinya mengubah gambar yang merupakan matriks 2 dimensi menjadi larik/array 1 dimensi. Pada kasus kita, sebuah gambar MNIST yang merupakan matriks 28x 28 elemen akan diubah menjadi array satu dimensi sebesar 784 elemen.
-Hidden layer
-Dense layer pada Keras merupakan layer yang dapat dipakai sebagai hidden layer dan output layer pada sebuah MLP. Parameter unit merupakan jumlah perceptron pada sebuah layer. Kita dapat menggunakan fungsi aktivasi rectified linear unit (Relu) atau fungsi aktivasi lainnya pada layer ini.
-Output layer
-Layer ini dapat didefinisikan dengan membuat sebuah Dense layer. Jumlah unit menyesuaikan dengan jumlah label pada dataset. Untuk fungsi aktivasi pada layer output, gunakan fungsi aktivasi Sigmoid jika hanya terdapat 2 kelas/label pada dataset. Untuk dataset yang memiliki 3 kelas atau lebih, gunakan fungsi aktivasi Softmax. Fungsi aktivasi softmax akan memilih kelas mana yang memiliki probabilitas tertinggi. Untuk data fashion MNIST, kita akan menggunakan fungsi aktivasi softmax karena terdapat 10 kelas.
-
-ecara umum, ada empat tahapan yang perlu kita lakukan dalam memproses data.
-
-1. Ubah dataset ke dalam bentuk larik/array. _Yup_, larik berisi angka-angka adalah format data yang dapat diterima oleh model kita. Sama seperti pada kelas Belajar Machine Learning untuk Pemula, model kita menerima gambar sebagai matriks atau larik 2 dimensi.
-2. Pisahkan atribut dan label pada data. Model kita akan mempelajari korelasi antara atribut dan label pada dataset.
-3. Ubah skala data dalam skala yang seragam. Nama teknik ini adalah normalization. Normalization dilakukan karena NN akan memproses nilai yang berada di antara 0 dan 1  sehingga membuat komputasi lebih optimal. Teknik ini dibutuhkan sehingga komputasi lebih optimal.
-4. Terakhir, pisahkan dataset ke dalam data latih dan data uji. Betul, kita memerlukan data uji untuk mengevaluasi kinerja dari model yang telah kita latih.
-
-#### Data Augmentasi dengan TensorFlow <= 2.9
-ImageDataGenerator merupakan sebuah fungsi yang sangat berguna untuk mempersiapkan data latih dan data validasi. Beberapa kemudahan yang disediakan ImageDataGenerator antara lain, preprocessing data, pelabelan sampel otomatis, dan augmentasi gambar.
-
-Augmentasi gambar merupakan sebuah teknik yang dapat digunakan untuk memperbanyak data latih dengan cara menduplikasi gambar yang telah ada dengan menambahkan variasi tertentu seperti _rescale, rotation, zoom_, dan lain sebagainya. 
-
-Kode berikut menunjukkan proses augmentasi gambar pada setiap sampel di dataset.
-
-1. from tensorflow.keras.preprocessing.image import ImageDataGenerator
-2. train_datagen = ImageDataGenerator(
-3.                     rescale=1./255,
-4.                     rotation_range=20,
-5.                     horizontal_flip=True,
-6.                     shear_range = 0.2,
-7.                     fill_mode = 'nearest')
-
-8. test_datagen = ImageDataGenerator(
-9.                     rescale=1./255)
-
-
-10. x = -4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0
-11. f(x) = 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0
-
-Sebuah model dari API Keras dapat menerima masukan dengan tipe data numpy array sehingga kita bisa membuat 2 buah objek bertipe numpy array, satu untuk atribut (x) dan satu lagi sebagai labelnya (f(x)). Untuk jenis tipe data lain yang dapat diterima sebagai masukan sebuah model dari API Keras, Anda dapat mengunjungi tautan [berikut](https://www.tensorflow.org/api_docs/python/tf/keras/Model). 
-
-Mari kita mulai dengan melakukan impor library yang akan digunakan seperti kode di bawah ini.
-
-1. import tensorflow as tf
-2. import numpy as np
-3. from tensorflow import keras
-Selanjutnya, kita harus mengubah angka-angka di atas menjadi sebuah larik/array agar dapat diterima oleh Keras sehingga proses pelatihan akan berjalan dengan baik. Kita dapat menggunakan kode berikut untuk mengubahnya menjadi sebuah larik/array.
-
-4. X = np.array([-4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0], dtype=float)
-5. Y = np.array([5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0], dtype=float)
-6. model = tf.keras.Sequential([
-7.     tf.keras.layers.Dense(units=1, input_shape=[1])
-8.     ])
-
-9. model.predict(np.array([4, 5]))
-
-Ketika kita menjalankan kode di atas, hasil yang kita dapat seharusnya adalah 13 dan 14 di mana f(4) = 4 + 9 dan f(5) = 5 + 9. Namun, ketika kita menjalankan kode tersebut, output yang dihasilkan adalah sebagai berikut.
-
-1. 1/1 [==============================] - 0s 40ms/step
-2. array([[12.999903],
-3.        [13.999887]], dtype=float32)
-
-4. # Opsi 1 (menggunakan dataset lokal)
-5. import pandas as pd
-6. df = pd.read_csv('citrus.csv')
-
-7. # Opsi 2 (menggunakan dataset dari google drive)
-8. df = pd.read_csv('https://drive.google.com/uc?id=1XZbZ5Z7MBXYaR3UO1HbQ4ncPi4R3HsyF')
-9. df.head()
-10. df.loc[df['name'] == 'grapefruit', 'name'] = 0
-11. df.loc[df['name'] == 'orange', 'name'] = 1
-12. from sklearn import preprocessing
-
-13. label_encoder = preprocessing.LabelEncoder() 
-14. df['name'] = label_encoder.fit_transform(df['name']) 
-15. print(df)
-16. dataset = df.values
-’’’ pilih 5 kolom terakhir sebagai atribut
-bilangan sebelum koma untuk memilih baris pada dataframe
-bilangan setelah koma untuk memilih kolom pada dataframe ’’’
-X = dataset[:,1:6]
-Jangan lupa untuk memisahkan label dari dataset. Pada dataset kita, label terdapat pada kolom pertama. Jalankan kode di bawah untuk membuat sebuah array numpy yang hanya berisi label kita.
-
-y = dataset[:,0]
-from sklearn import preprocessing
-min_max_scaler = preprocessing.MinMaxScaler()
-X_scale = min_max_scaler.fit_transform(X)
-X_scale
-1. from sklearn.model_selection import train_test_split
-2. X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
-3. model = Sequential([    
-4.                     Dense(32, activation='relu', input_shape=(5,)),    
-5.                     Dense(32, activation='relu'),    
-6.                     Dense(1, activation='sigmoid')])
-
-mport pandas as pd
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from keras.models import Sequential
-from keras.layers import Dense
-Setelah semuanya siap, Anda dapat menambahkan code cell pertama pada notebook yang telah dibuka. Dengan menggunakan pandas untuk kita dapat merubah dataset menjadi sebuah dataframe. Untuk melakukannya, gunakan fungsi read_csv().
-
-df = pd.read_csv('https://drive.google.com/uc?id=1roJ83AbgzDcvRr0Gwud0BmdUQx-oSG-w')
-df.head()
-df = df.drop(columns='Id')
-category = pd.get_dummies(df.Species, dtype=int)
-category
-new_df = pd.concat([df, category], axis=1)
-new_df = new_df.drop(columns='Species')
-new_df
-1. dataset = new_df.values
-2. dataset
-3. min_max_scaler = preprocessing.MinMaxScaler()
-4. X_scale = min_max_scaler.fit_transform(X)
-5. X_scale
-6. X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
-7. model = Sequential([    
-8.                     Dense(64, activation='relu', input_shape=(4,)),    
-9.                     Dense(64, activation='relu'),    
-10.                     Dense(3, activation='softmax')])
-11. model.compile(optimizer='Adam',
-12.               loss='categorical_crossentropy',
-13.               metrics=['accuracy'])
-
-14. import matplotlib.pyplot as plt
-15. plt.plot(hist.history['loss'])
-16. plt.title('Model loss')
-17. plt.ylabel('Loss')
-18. plt.xlabel('Epoch')
-19. plt.legend(['Train'], loc='upper right')
-20. plt.show()
-21. plt.plot(hist.history['accuracy'])
-22. plt.title('Model accuracy')
-23. plt.ylabel('Accuracy')
-24. plt.xlabel('Epoch')
-25. plt.legend(['Train'], loc='lower right')
-26. plt.show()
-
-from keras.layers import Dense, Dropout
-model = Sequential([
-                    Dense(64, activation='relu', input_shape=(4,)),
-                    Dense(64, activation='relu'),
-                    Dropout(0.5),
-                    Dense(3, activation='softmax')])
-from keras.layers import Dense, Dropout, BatchNormalization
-model = Sequential([
-                    Dense(64, activation='relu', input_shape=(4,)),
-                    Dense(64, activation='relu'),
-                    Dropout(0.5),
-                    BatchNormalization(momentum=0.99),
-                    Dense(3, activation='softmax')])
-
-Mencegah Overfitting dengan Dropout dan Batch Normalization
-Seperti yang telah dipelajari pada materi sebelumnya, masalah umum yang dihadapi model machine learning adalah overfitting. Masih ingat bukan tentang overfitting? Yup, overfitting adalah situasi ketika sebuah model memiliki performa yang bagus saat mengenali data latih, tetapi buruk saat mengenali data-data baru yang belum pernah ditemuinya.
-
-Overfitting pada machine learning dapat terjadi ketika data pelatihan yang kita miliki terlalu sedikit dan tidak merepresentasikan semua kemungkinan dari nilai sesungguhnya. Kondisi lainnya adalah ketika kita memiliki data pelatihan yang sangat banyak, tetapi memiliki informasi yang tidak relevan dengan data di lapangan. Hal ini menyebabkan model harus mempelajari data yang kompleks tetapi tidak memiliki pola yang berguna.
-
-Penyebab di atas juga berlaku pada jaringan saraf tiruan. Terus, apa solusinya dan bagaimana kita mengetahui kualitas dari model neural network? Tenang saja, Anda sudah berada di jalur yang tepat. Pada latihan sebelumnya, kita sudah memisahkan data latih dan data uji sehingga kualitas model melalui evaluasi yang sudah dilakukan dapat terlihat. Sebagai contoh perhatikan tabel berikut.
-
-Model	Akurasi Pelatihan	Akurasi Pengujian
-A
-
-99,9%
-
-95%
-
-B
-
-80%
-
-80%
-
-C
-
-96%
-
-45%
-
-Model A menunjukkan bahwa ada kesenjangan tentang hubungan antara akurasi pelatihan dan pengujian dalam konteks model. Dalam membandingkan model A dan B, model A lebih baik karena memiliki akurasi pengujian yang lebih tinggi. Meskipun ada sedikit penurunan akurasi pengujian itu tidak menunjukkan overfitting yang signifikan. Di sisi lain, model B tidak dipilih karena perbedaan yang kecil antara akurasi pelatihan dan pengujian yang menunjukkan kurangnya generalisasi.
-Dropout
-Salah satu cara mencegah overfitting adalah dengan menggunakan dropout. Dropout adalah fungsi standar yang umum digunakan industri untuk mencegah overfitting. Seperti yang kita ketahui, semakin kompleks sebuah model machine learning, semakin tinggi kemungkinan model tersebut mengalami overfitting. Dropout bekerja dengan cara mengurangi kompleksitas model neural network tanpa mengubah arsitektur model tersebut. 
-
-Lalu, bagaimana cara dropout bekerja? Nama dropout mengacu pada unit/perceptron yang di-dropout (dibuang) secara temporer pada sebuah layer. Contohnya seperti gambar di bawah ini di mana besaran dropout yang dipilih adalah 0.5 sehingga 50% dari perceptron hidden layer kedua dimatikan secara berkala pada saat pelatihan. Dropout memilih neuron yang akan "dimatikan" secara acak selama setiap iterasi pelatihan.
-
-### _Batch Normalization_
-
-BatchNormalization adalah layer yang digunakan dalam jaringan saraf tiruan (neural network) untuk mempercepat konvergensi pelatihan dan mengurangi sensitivitas terhadap inisialisasi parameter. Layer ini bekerja dengan melakukan normalisasi input dari layer sebelumnya pada setiap batch sehingga memungkinkan pelatihan yang lebih stabil dan cepat.
-Optimasi Pelatihan Menggunakan Callbacks
-Pada latihan sebelumnya, pelatihan model berlangsung sebanyak jumlah epoch yang sudah ditentukan. Jika kita amati, epoch terakhir memperlihatkan nilai akurasi dari model tidak meningkat lagi. Contoh kasus lainnya, bayangkan kita menentukan epoch sebanyak 100 dan ternyata pada epoch ke-20, performa dari model sudah memenuhi target. Jika itu terjadi, tentunya kita harus menghentikan proses pelatihan agar tidak membuang-buang waktu, bukan?
-
-Untungnya, kita dapat memberi tahu model untuk berhenti ketika telah mencapai metrik tertentu sehingga proses pelatihan model menjadi lebih singkat. Bayangkan ketika waktu untuk eksekusi 1 epoch sebesar 6 detik. Untuk mengeksekusi 100 epoch berarti membutuhkan waktu selama 600 detik. Jika model telah mencapai target akurasi yang kita inginkan misalnya pada epoch ke-30, dan model otomatis berhenti melakukan pelatihan, kita bisa menghemat waktu eksekusi 70 epoch yaitu selama 420 detik. Wow!
-
-import pandas as pd
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, BatchNormalization
-import tensorflow as tf
-df = pd.read_csv('https://drive.google.com/uc?id=1roJ83AbgzDcvRr0Gwud0BmdUQx-oSG-w')
-df = df.drop(columns='Id')
-category = pd.get_dummies(df.Species, dtype=int)
-new_df = pd.concat([df, category], axis=1)
-new_df = new_df.drop(columns='Species')
-dataset = new_df.values
-# Pilih 4 kolom pertama untuk dijadikan sebagai atribut
-X = dataset[:,0:4]
-# Pilih 3 kolom terakhir sebagai label
-y = dataset[:,4:7]
-# Normalisasi
-min_max_scaler = preprocessing.MinMaxScaler()
-X_scale = min_max_scaler.fit_transform(X)
-X_scale
-X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
-from keras.layers import Dense, Dropout, BatchNormalization
-model = Sequential([
-                    Dense(64, activation='relu', input_shape=(4,)),
-                    Dense(64, activation='relu'),
-                    Dropout(0.5),
-                    BatchNormalization(momentum=0.99),
-                    Dense(3, activation='softmax')])
-model.compile(optimizer='Adam',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-hist = model.fit(X_train, Y_train, epochs=100)
-
-Setelah semuanya siap, kita perlu membuat sebuah kelas bernama **myCallback()**. Perhatikan baik-baik. Parameter pertama pada kelas callbacks di atas harus memiliki sifat inherit `tf.keras.callbacks.Callback`. Selanjutnya, kita buat fungsi yang paling penting yaitu **on_epoch_end()**. Fungsi inilah yang akan berperan untuk memberi tahu model agar berhenti melakukan pelatihan ketika telah mencapai target.
-
-Kode `if(logs.get(‘accuracy’)>0.9)` sangat intuitif menunjukkan kalau kode itu memiliki arti “jika akurasi lebih besar dari 0.9, maka eksekusi perintah berikutnya”. Kita juga dapat menulis kode `print(“\nAkurasi telah mencapai >90%!”)` untuk ditampilkan ketika callbacks aktif.
-
-Kode `self.model.stop_training = True` adalah kode yang memberi tahu model untuk menghentikan pelatihan. Setelah kelas ini dibuat, buatlah objek dari kelas tersebut. Berikut kode lengkap untuk membuat callbacks.
-
-1. class myCallback(tf.keras.callbacks.Callback):
-2.   def on_epoch_end(self, epoch, logs={}):
-3.     if(logs.get('accuracy')>0.9):
-4.       print("\nAkurasi telah mencapai >90%!")
-5.       self.model.stop_training = True
-6. callbacks = myCallback()
-
-Sebelum melakukan pelatihan, kita harus menentukan tiga buah argumen untuk melakukan compile model yang telah dibangun. Tentunya Anda masih ingatkan terhadap optimizers, loss function, dan metrics? Benar, kita harus menentukan konfigurasi yang tepat untuk kasus yang dihadapi.
-
-model.compile(
-    optimizer=tf.keras.optimizers.RMSprop(),
-    loss=tf.keras.losses.SparseCategoricalCrossentropy(),
-    metrics=['accuracy'],
-)
-Setelah model.compile() dipanggil, model sudah siap untuk dilatih dengan memanggil fungsi model.fit() dengan data pelatihan yang sesuai.
-
-model.fit(train_images, train_labels, batch_size=50, epochs=5)
-
-Rangkuman Membuat dan Melatih Neural Network dengan TensorFlow dan Keras
-
-
-Pengenalan TensorFlow dan Keras untuk Deep Learning
+# **Pengenalan TensorFlow dan Keras untuk Deep Learning**
 TensorFlow dan Keras merupakan framework yang sangat terkenal di kalangan praktisi machine learning, tetapi hal ini bukan berarti framework lainnya kurang bagus, ya. Hasil ini merupakan riset yang dilakukan oleh Jeff Hale pada tahun 2018 mengenai deep learning. Riset tersebut menggunakan 11 sumber data pada 7 kategori yang berbeda untuk mengukur popularitas framework berdasarkan ketertarikan pengguna. Hasilnya TensorFlow menang telak, bukan? Hal ini terjadi karena kedua framework ini memiliki beberapa kelebihan, seperti Open-source, mudah untuk debugging, compatibility yang baik, scalability yang fleksibel, komunitas yang luas dan masih banyak lagi. 
 
 Dengan demikian, tentu Anda semakin bersemangat dan penasaran untuk mempelajari materi ini. Supaya tidak makin penasaran, mari kita mulai perjalanan yang romantis dengan TensorFlow dan Keras.
@@ -609,3 +338,308 @@ model.fit(training_images, training_labels, batch_size=128, epochs=5)
 Seperti yang Anda lihat di atas, waktu pelatihan yang dilakukan memakan waktu yang lebih singkat. Silakan Anda bereksperimen menggunakan batch size yang lain untuk pengalaman belajar yang lebih maksimal. Bagaimana hasilnya? Silakan beri kesimpulan sendiri, ya. 
 
 Pada latihan ini, kita telah memahami bahwa dengan menggunakan batch loading dapat mempercepat pelatihan. Untuk pemilihan batch size sendiri tidak ada aturan bakunya, tetapi yang umum dipakai adalah 32, 64, dan 128. Anda harus bereksperimen sendiri guna menemukan batch size yang cocok dengan masalah atau model yang sedang dibangun.
+
+Berikut adalah penyatuan materi dari ketiga dokumen (_Convolutional Neural Network (CNN)_, _Recurrent Neural Network (RNN)_, dan _Glosarium Deep Learning_) yang telah disusun secara runut, terstruktur, dan rapi:
+
+# Modul Pembelajaran: Arsitektur Deep Learning dan Glosarium
+
+## 1. Arsitektur Jaringan Berbasis Visual: Convolutional Neural Network (CNN)
+
+_Convolutional Neural Network_ (CNN) adalah arsitektur _deep learning_ yang dirancang secara khusus untuk memproses data visual dan gambar secara efisien. Arsitektur ini bekerja dengan mengekstrak hierarki fitur visual dari tingkat rendah hingga tingkat tinggi secara bertahap.
+
+### Karakteristik Utama Lapisan CNN
+
+- **Lapisan Konvolusi (_Convolutional Layer_)**: Lapisan inti yang menggunakan filter/kernel konvolusi untuk memindai gambar dan mengekstrak fitur lokal seperti sudut, tepi, atau tekstur, yang kemudian menghasilkan peta fitur (_feature map_).
+    
+- **Lapisan Pooling (_Pooling Layer_)**: Lapisan yang bertugas mereduksi dimensi spasial dari peta fitur guna meringankan beban komputasi serta mencegah _overfitting_, baik melalui metode nilai maksimum (_max pooling_) maupun rata-rata (_average pooling_).
+    
+- **Lapisan Aktivasi (_Activation Layer_)**: Menggunakan fungsi aktivasi nonlinier, umumnya ReLU (_Rectified Linear Unit_), untuk memungkinkan model mempelajari pola-pola nonlinier yang kompleks.
+    
+- **Lapisan Terhubung Penuh (_Fully Connected / Dense Layer_)**: Lapisan saraf di bagian akhir jaringan yang meratakan fitur dan melakukan klasifikasi akhir berdasarkan representasi visual yang telah diekstraksi.
+    
+
+### Penggunaan Umum CNN
+
+- **Klasifikasi Citra**: Mengelompokkan gambar ke dalam kategori tertentu, misalnya pengenalan angka tulisan tangan.
+    
+- **Pengenalan Objek dan Wajah**: Mendeteksi dan mengidentifikasi keberadaan objek atau wajah pada bidang gambar.
+    
+- **Segmentasi Citra**: Memisahkan batas objek spesifik dari latar belakang gambar.
+    
+
+## 2. Arsitektur Jaringan Berbasis Sekuensial: Recurrent Neural Network (RNN) dan Variannya
+
+_Recurrent Neural Network_ (RNN) adalah kelas arsitektur jaringan saraf yang dirancang khusus untuk memproses data berurutan (_sequential_) dan deret waktu (_time series_), di mana urutan data memiliki konteks temporal atau saling ketergantungan. Keunggulan utamanya terletak pada loop rekursif yang memungkinkannya mempertahankan memori atau konteks historis dari urutan data sebelumnya.
+
+### Tipe-Tipe Aliran Data RNN (Berdasarkan Panjang Input-Output)
+
+1. **One-to-One**: Jaringan standar dengan satu input dan satu output.
+    
+2. **One-to-Many**: Menerima satu input dan menghasilkan serangkaian output, contohnya pada pembuatan deskripsi otomatis untuk gambar (_image captioning_).
+    
+3. **Many-to-One**: Mengambil rangkaian urutan input dan memproyeksikannya menjadi satu output, umum dipakai dalam analisis sentimen teks.
+    
+4. **Many-to-Many**: Menerima urutan input ganda dan menghasilkan urutan output ganda, seperti pada mesin penerjemah bahasa.
+    
+
+### Varian Arsitektur RNN
+
+- **Vanilla RNN (RNN Sederhana)**:
+    
+    - Bentuk dasar RNN di mana setiap neuron memiliki koneksi berulang ke dirinya sendiri.
+        
+    - Rentan terhadap kendala hilangnya gradien (_vanishing gradient problem_), sehingga sulit menangani dependensi urutan jangka panjang.
+        
+- **Long Short-Term Memory (LSTM)**:
+    
+    - Dirancang khusus untuk mengatasi _vanishing gradient_ dengan memperkenalkan mekanisme gerbang (_gates_) dan _cell state_.
+        
+    - **Forget Gate**: Berfungsi menyeleksi dan membuang informasi lama yang sudah tidak relevan.
+        
+    - **Input Gate**: Mengontrol informasi baru yang akan disimpan ke dalam memori jangka panjang.
+        
+    - Cocok untuk tugas NLP tingkat lanjut dan pemrosesan sinyal audio.
+        
+- **Gated Recurrent Unit (GRU)**:
+    
+    - Varian ringkas dari LSTM yang menggabungkan status ke dalam _hidden state_ tanpa memiliki _cell state_ terpisah.
+        
+    - Menggunakan dua gerbang utama: _update gate_ dan _reset gate_ untuk mengatur aliran informasi.
+        
+    - Memiliki parameter lebih sedikit sehingga proses pelatihan berlangsung lebih cepat dibanding LSTM.
+        
+
+### Tahapan dan Alur Kerja RNN
+
+1. **Pengolahan Input**: Elemen berurutan dimasukkan satu demi satu ke dalam model setelah diubah menjadi representasi vektor numerik (misalnya _word embedding_).
+    
+2. **Perhitungan Aktivasi**: Unit neuron menghitung nilai aktivasi berdasarkan input langkah saat ini dan status (_state_) dari langkah sebelumnya menggunakan fungsi aktivasi seperti `tanh` atau `sigmoid`.
+    
+3. **Pembaruan Status Internal**: Memperbarui status memori internal melalui operasi perkalian matriks bobot dan penambahan bias.
+    
+4. **Generasi Output**: Model menghasilkan nilai luaran pada tiap langkah waktu untuk kebutuhan prediksi langkah selanjutnya maupun hasil akhir sekuens.
+    
+
+## 3. Arsitektur Deep Learning Tingkat Lanjut Lainnya
+
+Selain CNN dan RNN, terdapat arsitektur khusus lain yang banyak diterapkan dalam industri AI modern:
+
+- **Transformer**:
+    
+    - Arsitektur berbasis mekanisme atensi mandiri (_self-attention_) yang mampu memproses hubungan kata dalam teks secara paralel tanpa batasan jarak dependensi.
+        
+    - Terdiri dari blok _encoder_ dan _decoder_ untuk tugas pemodelan bahasa dan terjemahan mesin lintas bahasa.
+        
+- **Generative Adversarial Network (GAN)**:
+    
+    - Arsitektur generatif yang melatih dua model saraf secara simultan dan kompetitif.
+        
+    - **Generator**: Menghasilkan data sintetis (misalnya gambar realistis) dari distribusi laten.
+        
+    - **Diskriminator**: Mengevaluasi dan membedakan antara data nyata dengan data buatan generator.
+        
+    - Sering digunakan untuk sintesis citra kreatif dan augmentasi dataset.
+        
+- **Autoencoder**:
+    
+    - Jaringan nir-pengawasan (_unsupervised_) yang terdiri dari komponen _Encoder_ (memampatkan data input ke representasi laten dimensi rendah) dan _Decoder_ (merekonstruksi kembali data asli).
+        
+    - Berfungsi dalam reduksi dimensi serta penghilangan derau data (_denoising_).
+        
+
+## 4. Glosarium Terminologi Machine Learning & Deep Learning
+
+### A
+
+- **A/B Testing**: Pengujian statistik untuk membandingkan performa dua atau lebih teknik/model.
+    
+- **Action**: Keputusan atau tindakan yang diambil oleh agen dalam _reinforcement learning_.
+    
+- **Activation Function**: Fungsi matematika yang memproses penjumlahan berbobot input untuk menentukan nilai keluaran neuron ke lapisan berikutnya (contoh: ReLU, Sigmoid).
+    
+- **Agent**: Entitas otonom pembuat keputusan dalam _reinforcement learning_.
+    
+- **Akurasi**: Rasio prediksi yang benar terhadap total seluruh data uji.
+    
+- **Anomaly Detection**: Teknik identifikasi pola data yang menyimpang secara signifikan dari pola umum.
+    
+
+### B
+
+- **Bobot (_Weight_)**: Parameter yang dipelajari model untuk menentukan kekuatan atau tingkat kepentingan hubungan antar-neuron.
+    
+
+### C
+
+- **Callbacks**: Utilitas yang mengeksekusi instruksi tertentu pada berbagai tahap pelatihan model (misalnya menghentikan iterasi di akhir epoch).
+    
+- **Clustering**: Pengelompokan data tanpa label ke dalam beberapa klaster berdasarkan tingkat kemiripannya.
+    
+- **Collaborative Filtering**: Metode sistem rekomendasi berdasarkan kesamaan preferensi antarpengguna.
+    
+- **Content-based Filtering**: Sistem rekomendasi yang memanfaatkan atribut/fitur inheren dari suatu objek.
+    
+
+### D
+
+- **Data Kategorik**: Fitur bernilai diskrit yang terbagi ke dalam kelompok tertentu.
+    
+- **Data Numerik**: Fitur kontinu berupa bilangan riil atau bulat.
+    
+- **Data Time Series**: Rangkaian observasi data yang tercatat berdasarkan interval waktu tertentu secara berurutan.
+    
+- **Dataset**: Kumpulan data terstruktur yang memuat satu atau beberapa fitur.
+    
+- **Deep Learning**: Subbidang _machine learning_ berbasis jaringan saraf tiruan berlapis banyak yang mampu mempelajari data kompleks.
+    
+- **Deep Neural Network**: Jaringan saraf tiruan yang memiliki lebih dari satu _hidden layer_.
+    
+- **Deployment**: Proses integrasi model yang telah dilatih ke lingkungan produksi operasional.
+    
+- **Dropout Regularization**: Teknik regularisasi dengan menonaktifkan sejumlah neuron secara acak selama pelatihan guna mengatasi _overfitting_.
+    
+
+### E
+
+- **Embeddings**: Pemetaan representasi fitur kategorik atau teks ke dalam vektor ruang dimensi rendah secara kontinu.
+    
+- **Environment**: Lingkungan interaksi agen dalam _reinforcement learning_ yang memberikan observasi dan imbalan.
+    
+- **Epoch**: Satu putaran penuh proses pelatihan yang melewati seluruh sampel dalam dataset.
+    
+
+### F
+
+- **Federated Learning**: Pendekatan pelatihan model terdesentralisasi yang mengutamakan privasi tanpa memusatkan data sensitif.
+    
+- **Feedback**: Kondisi di mana keluaran atau prediksi model memengaruhi siklus data pelatihan berikutnya.
+    
+- **Fitur (_Feature_)**: Variabel masukan yang digunakan model untuk membuat prediksi.
+    
+
+### G
+
+- **Good Fit**: Keadaan ideal saat model mampu menggeneralisasi data pelatihan dan data baru secara optimal.
+    
+
+### H
+
+- **Hidden Layer**: Lapisan neuron tersembunyi yang terletak di antara lapisan input dan output.
+    
+- **Hyperparameter**: Variabel konfigurasi eksternal yang diatur sebelum pelatihan untuk mengontrol proses belajar (contoh: _learning rate_, _epoch_).
+    
+
+### I
+
+- **Image Augmentation**: Teknik memperkaya data latih visual secara artifisial melalui transformasi geometris gambar.
+    
+- **Input Layer**: Lapisan pertama penerima data masukan pada jaringan saraf.
+    
+- **Input_shape**: Parameter dimensi bentuk masukan data yang dapat diterima oleh lapisan pertama model.
+    
+
+### K
+
+- **Keras**: Pustaka API tingkat tinggi berbasis Python untuk membangun dan melatih jaringan saraf.
+    
+- **Klasifikasi**: Model pembelajaran terarah (_supervised_) untuk memprediksi kategori kelas.
+    
+
+### L
+
+- **Label**: Variabel target atau jawaban benar dari suatu sampel data.
+    
+- **Layer**: Kumpulan simpul neuron yang memproses input dan menghasilkan output pada arsitektur jaringan.
+    
+- **LSTM (_Long Short-Term Memory_)**: Varian sel RNN yang dirancang khusus untuk menyimpan konteks data urutan panjang.
+    
+
+### M
+
+- **Machine Learning**: Bidang komputasi yang memberi sistem kemampuan belajar dari pola data tanpa instruksi terprogram eksplisit.
+    
+- **MAE (_Mean Absolute Error_)**: Metrik evaluasi rata-rata selisih absolut antara nilai prediksi dan nilai aktual.
+    
+- **Matplotlib**: Pustaka visualisasi grafik 2 dimensi di Python.
+    
+- **Model**: Struktur representasi hubungan antara variabel fitur dan label yang terbentuk dari proses pelatihan.
+    
+- **MSE (_Mean Squared Error_)**: Metrik evaluasi rata-rata kuadrat selisih antara nilai prediksi dan nilai aktual.
+    
+
+### N
+
+- **Neural Network**: Model komputasi terinspirasi struktur otak yang tersusun dari neuron buatan saling terhubung.
+    
+- **Normalization**: Penyesuaian rentang data numerik ke skala standar (biasanya 0 hingga 1).
+    
+
+### O
+
+- **One-Hot Encoding**: Representasi variabel kategorik ke dalam bentuk vektor biner kolom terpisah.
+    
+- **Optimizer**: Algoritma komputasi untuk memperbarui bobot model selama proses penurunan gradien.
+    
+- **Outlier**: Titik data ekstrem yang menyimpang jauh dari distribusi kumpulan data umum.
+    
+- **Output Layer**: Lapisan terakhir jaringan saraf yang menyajikan hasil prediksi akhir.
+    
+- **Overfitting**: Kondisi ketika model menghafal data latih terlalu detail sehingga gagal memprediksi data baru secara akurat.
+    
+
+### P
+
+- **Pandas**: Pustaka manipulasi dan analisis data berbasis struktur tabel (Dataframe).
+    
+- **Parameter**: Variabel internal model (seperti bobot dan bias) yang disesuaikan secara mandiri selama proses pelatihan.
+    
+- **Policy**: Aturan atau strategi probabilitas yang memandu agen memilih aksi dalam _reinforcement learning_.
+    
+- **Presisi**: Proporsi prediksi positif model yang terbukti benar terhadap keseluruhan hasil yang diprediksi positif.
+    
+- **Propagasi Balik (_Backpropagation_)**: Algoritma penghitungan gradien galat secara mundur dari lapisan output ke input untuk memperbarui bobot.
+    
+
+### R
+
+- **Recall**: Proporsi data positif aktual yang berhasil dikenali dan diklasifikasikan dengan benar oleh model.
+    
+- **Reinforcement Learning**: Pembelajaran berbasis interaksi agen dan lingkungan untuk memaksimalkan akumulasi hadiah (_reward_).
+    
+- **Reward**: Umpan balik numerik positif yang diberikan lingkungan kepada agen atas aksi yang tepat.
+    
+
+### S
+
+- **Scikit-learn**: Pustaka pembelajaran mesin sumber terbuka untuk klasifikasi, regresi, prapemrosesan, dan evaluasi model.
+    
+
+### T
+
+- **TensorBoard**: Dasbor visualisasi interaktif untuk memantau metrik pelatihan TensorFlow.
+    
+- **TensorFlow**: Platform komputasi terdistribusi tingkat lanjut dari Google untuk pengembangan model _machine learning_ skala besar.
+    
+- **TensorFlow.js**: Varian pustaka TensorFlow untuk mengeksekusi model _deep learning_ langsung di peramban web (_browser_) menggunakan format JSON.
+    
+- **TF-Agent**: Pustaka dari ekosistem TensorFlow untuk mempermudah implementasi algoritma _reinforcement learning_.
+    
+- **Test Set**: Kumpulan data uji independen untuk mengevaluasi kinerja akhir model setelah fase validasi.
+    
+- **Tokenisasi**: Proses memecah teks kalimat menjadi unit-unit kata atau token numerik yang lebih mendasar.
+    
+- **Training Set**: Bagian data utama yang dialokasikan khusus untuk melatih parameter bobot model.
+    
+- **Transfer Learning**: Pendekatan pemanfaatan bobot model terlatih dari satu tugas untuk diterapkan pada tugas baru.
+    
+
+### U
+
+- **Underfitting**: Kondisi performa model yang buruk karena gagal menangkap pola hubungan fundamental dalam data pelatihan.
+    
+- **Unsupervised Learning**: Paradigma pembelajaran mesin pada data tanpa label untuk mengekstrak struktur atau pola tersembunyi.
+    
+
+### V
+
+- **Validation Set**: Subhimpunan data terpisah yang digunakan untuk mengevaluasi model saat proses penyetelan _hyperparameter_ berlangsung.
