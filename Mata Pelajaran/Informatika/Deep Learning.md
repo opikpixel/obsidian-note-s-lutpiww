@@ -168,3 +168,89 @@ model = Sequential([
                     Dropout(0.5),
                     BatchNormalization(momentum=0.99),
                     Dense(3, activation='softmax')])
+
+Mencegah Overfitting dengan Dropout dan Batch Normalization
+Seperti yang telah dipelajari pada materi sebelumnya, masalah umum yang dihadapi model machine learning adalah overfitting. Masih ingat bukan tentang overfitting? Yup, overfitting adalah situasi ketika sebuah model memiliki performa yang bagus saat mengenali data latih, tetapi buruk saat mengenali data-data baru yang belum pernah ditemuinya.
+
+Overfitting pada machine learning dapat terjadi ketika data pelatihan yang kita miliki terlalu sedikit dan tidak merepresentasikan semua kemungkinan dari nilai sesungguhnya. Kondisi lainnya adalah ketika kita memiliki data pelatihan yang sangat banyak, tetapi memiliki informasi yang tidak relevan dengan data di lapangan. Hal ini menyebabkan model harus mempelajari data yang kompleks tetapi tidak memiliki pola yang berguna.
+
+Penyebab di atas juga berlaku pada jaringan saraf tiruan. Terus, apa solusinya dan bagaimana kita mengetahui kualitas dari model neural network? Tenang saja, Anda sudah berada di jalur yang tepat. Pada latihan sebelumnya, kita sudah memisahkan data latih dan data uji sehingga kualitas model melalui evaluasi yang sudah dilakukan dapat terlihat. Sebagai contoh perhatikan tabel berikut.
+
+Model	Akurasi Pelatihan	Akurasi Pengujian
+A
+
+99,9%
+
+95%
+
+B
+
+80%
+
+80%
+
+C
+
+96%
+
+45%
+
+Model A menunjukkan bahwa ada kesenjangan tentang hubungan antara akurasi pelatihan dan pengujian dalam konteks model. Dalam membandingkan model A dan B, model A lebih baik karena memiliki akurasi pengujian yang lebih tinggi. Meskipun ada sedikit penurunan akurasi pengujian itu tidak menunjukkan overfitting yang signifikan. Di sisi lain, model B tidak dipilih karena perbedaan yang kecil antara akurasi pelatihan dan pengujian yang menunjukkan kurangnya generalisasi.
+Dropout
+Salah satu cara mencegah overfitting adalah dengan menggunakan dropout. Dropout adalah fungsi standar yang umum digunakan industri untuk mencegah overfitting. Seperti yang kita ketahui, semakin kompleks sebuah model machine learning, semakin tinggi kemungkinan model tersebut mengalami overfitting. Dropout bekerja dengan cara mengurangi kompleksitas model neural network tanpa mengubah arsitektur model tersebut. 
+
+Lalu, bagaimana cara dropout bekerja? Nama dropout mengacu pada unit/perceptron yang di-dropout (dibuang) secara temporer pada sebuah layer. Contohnya seperti gambar di bawah ini di mana besaran dropout yang dipilih adalah 0.5 sehingga 50% dari perceptron hidden layer kedua dimatikan secara berkala pada saat pelatihan. Dropout memilih neuron yang akan "dimatikan" secara acak selama setiap iterasi pelatihan.
+
+### _Batch Normalization_
+
+BatchNormalization adalah layer yang digunakan dalam jaringan saraf tiruan (neural network) untuk mempercepat konvergensi pelatihan dan mengurangi sensitivitas terhadap inisialisasi parameter. Layer ini bekerja dengan melakukan normalisasi input dari layer sebelumnya pada setiap batch sehingga memungkinkan pelatihan yang lebih stabil dan cepat.
+Optimasi Pelatihan Menggunakan Callbacks
+Pada latihan sebelumnya, pelatihan model berlangsung sebanyak jumlah epoch yang sudah ditentukan. Jika kita amati, epoch terakhir memperlihatkan nilai akurasi dari model tidak meningkat lagi. Contoh kasus lainnya, bayangkan kita menentukan epoch sebanyak 100 dan ternyata pada epoch ke-20, performa dari model sudah memenuhi target. Jika itu terjadi, tentunya kita harus menghentikan proses pelatihan agar tidak membuang-buang waktu, bukan?
+
+Untungnya, kita dapat memberi tahu model untuk berhenti ketika telah mencapai metrik tertentu sehingga proses pelatihan model menjadi lebih singkat. Bayangkan ketika waktu untuk eksekusi 1 epoch sebesar 6 detik. Untuk mengeksekusi 100 epoch berarti membutuhkan waktu selama 600 detik. Jika model telah mencapai target akurasi yang kita inginkan misalnya pada epoch ke-30, dan model otomatis berhenti melakukan pelatihan, kita bisa menghemat waktu eksekusi 70 epoch yaitu selama 420 detik. Wow!
+
+import pandas as pd
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, BatchNormalization
+import tensorflow as tf
+df = pd.read_csv('https://drive.google.com/uc?id=1roJ83AbgzDcvRr0Gwud0BmdUQx-oSG-w')
+df = df.drop(columns='Id')
+category = pd.get_dummies(df.Species, dtype=int)
+new_df = pd.concat([df, category], axis=1)
+new_df = new_df.drop(columns='Species')
+dataset = new_df.values
+# Pilih 4 kolom pertama untuk dijadikan sebagai atribut
+X = dataset[:,0:4]
+# Pilih 3 kolom terakhir sebagai label
+y = dataset[:,4:7]
+# Normalisasi
+min_max_scaler = preprocessing.MinMaxScaler()
+X_scale = min_max_scaler.fit_transform(X)
+X_scale
+X_train, X_test, Y_train, Y_test = train_test_split(X_scale, y, test_size=0.3)
+from keras.layers import Dense, Dropout, BatchNormalization
+model = Sequential([
+                    Dense(64, activation='relu', input_shape=(4,)),
+                    Dense(64, activation='relu'),
+                    Dropout(0.5),
+                    BatchNormalization(momentum=0.99),
+                    Dense(3, activation='softmax')])
+model.compile(optimizer='Adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+hist = model.fit(X_train, Y_train, epochs=100)
+
+Setelah semuanya siap, kita perlu membuat sebuah kelas bernama **myCallback()**. Perhatikan baik-baik. Parameter pertama pada kelas callbacks di atas harus memiliki sifat inherit `tf.keras.callbacks.Callback`. Selanjutnya, kita buat fungsi yang paling penting yaitu **on_epoch_end()**. Fungsi inilah yang akan berperan untuk memberi tahu model agar berhenti melakukan pelatihan ketika telah mencapai target.
+
+Kode `if(logs.get(‘accuracy’)>0.9)` sangat intuitif menunjukkan kalau kode itu memiliki arti “jika akurasi lebih besar dari 0.9, maka eksekusi perintah berikutnya”. Kita juga dapat menulis kode `print(“\nAkurasi telah mencapai >90%!”)` untuk ditampilkan ketika callbacks aktif.
+
+Kode `self.model.stop_training = True` adalah kode yang memberi tahu model untuk menghentikan pelatihan. Setelah kelas ini dibuat, buatlah objek dari kelas tersebut. Berikut kode lengkap untuk membuat callbacks.
+
+1. class myCallback(tf.keras.callbacks.Callback):
+2.   def on_epoch_end(self, epoch, logs={}):
+3.     if(logs.get('accuracy')>0.9):
+4.       print("\nAkurasi telah mencapai >90%!")
+5.       self.model.stop_training = True
+6. callbacks = myCallback()
