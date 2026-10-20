@@ -204,3 +204,113 @@ Penghematan biaya yang substansial melebihi EBS walau dengan beban penyimpanan y
 Kesimpulannya, jika Anda memiliki objek atau file yang lengkap dan hanya membutuhkan sesekali perubahan, maka pilihlah Amazon S3. Namun, jika Anda membutuhkan proses read (baca) data yang kompleks, maka tentu saja Anda perlu memilih Amazon EBS.
 
 Jadi, memilih penyimpanan yang tepat itu tergantung pada kebutuhan beban kerja Anda. Setiap layanan sebenarnya merupakan solusi yang tepat untuk kebutuhan tertentu. Pahamilah apa yang Anda butuhkan, maka Anda akan tahu layanan mana yang ideal.
+
+Amazon Elastic File System (Amazon EFS)
+Di modul ini, kita akan membahas tentang layanan file storage alias penyimpanan file, yang berarti beberapa client--pengguna, aplikasi, server, dsb--dapat mengakses data yang disimpan di folder file secara bersamaan.
+
+Dalam pendekatan ini, file server menggunakan block storage (penyimpanan blok) dengan local file system (sistem file lokal) untuk mengatur file. Nah, client dapat mengakses data di dalamnya melalui file path (jalur file).
+
+Dibandingkan dengan block storage dan object storage, file storage ini sangat ideal untuk kasus penggunaan di mana beberapa layanan dan sumber daya perlu mengakses data yang sama pada waktu yang sama.
+
+Layanan AWS yang termasuk ke dalamnya adalah Amazon Elastic File System, atau juga disebut dengan EFS. Amazon EFS adalah sistem file terkelola yang bisa diskalakan dan dapat digunakan oleh layanan AWS Cloud dan sumber daya di data center on-premise.
+
+Sudah sangat umum bagi perusahaan untuk berbagi sistem file di seluruh aplikasi mereka. Mari kita ambil contoh suatu kasus. Misalnya Anda memiliki beberapa server yang menjalankan analitik pada sejumlah besar data yang disimpan dalam sistem file bersama di data center on-premise.
+
+Karena berjalan di on-premise, tentu saja Anda harus memastikan bahwa kapasitas penyimpanan di sana dapat menyesuaikan dengan jumlah data yang Anda simpan. Anda juga harus memastikan data tersebut telah dicadangkan dan disimpan secara redundan (di beberapa tempat). Satu lagi, Anda pun harus mengelola semua servernya. Repot ya?
+
+Untungnya, AWS hadir memberikan solusi agar Anda tak perlu lagi khawatir untuk mengurus semuanya itu. AWS akan mengelola semua pekerjaan terkait scaling (penyesuaian kapasitas) dan replikasinya untuk Anda.
+
+Dengan EFS, Anda dapat memiliki beberapa instance yang mengakses data secara bersamaan. Ia akan melakukan scaling up dan scaling down--keduanya telah kita bahas di modul tentang penyesuaian kapasitas--sesuai kebutuhan secara otomatis. Sangat keren, bukan?
+
+Oke, mungkin Anda akan berpikir, “Loh, Amazon EBS juga bisa menyimpan file dan dapat diakses dari EC2 instance. Jadi, apa perbedaan sebenarnya?”
+
+Jawabannya sangat sederhana. Amazon EBS volume dilampirkan ke EC2 instance dan merupakan Availability Zone-level resource atau sumber daya tingkat Availability Zone. Itu artinya, EBS akan menyimpan data hanya di satu Availability Zone (AZ). Terlebih lagi, jika Anda ingin memasang EC2 ke EBS, maka Anda harus berada di AZ yang sama.
+
+Dengan Amazon EBS, Anda dapat menyimpan file, menjalankan database, atau menyimpan aplikasi di dalamnya. Ia adalah hard drive (cakram keras). Namun, jika Anda membuat EBS volume sebesar 2 terabyte lalu mengisinya hingga penuh, ia tidak akan serta-merta melakukan proses scaling dengan sendirinya. Itulah EBS.
+
+Lalu bagaimana dengan EFS? Amazon EFS memungkinkan beberapa instance untuk melakukan proses read (membaca) dan write (menulis) data darinya pada saat bersamaan.
+
+Tetapi, ia bukan sekadar hard drive kosong yang dapat Anda gunakan untuk menyimpan data. Amazon EFS adalah sistem file untuk Linux dan merupakan Regional resource (sumber daya regional). Itu berarti data akan disimpan di beberapa AZ. Dengan demikian, setiap EC2 instance yang berada di Region yang sama dapat menyimpan data ke sistem file Amazon EFS.
+
+Nah, jika Anda menyimpan banyak data ke EFS, ia secara otomatis akan melakukan scaling bahkan hingga petabyte tanpa mengganggu aplikasi.
+
+Amazon Relational Database Service (Amazon RDS)
+Sampai sini, kita sudah banyak belajar tentang berbagai sistem penyimpanan di AWS yang dapat membantu Anda untuk menyelesaikan persoalan terkait kartu digital untuk pelanggan setia di kedai kopi, sebagaimana yang telah kita paparkan di awal modul.
+
+Tetapi, ketahuilah! Anda juga perlu menjaga relasi antara berbagai tipe data. Tunggu, apa maksudnya?
+
+Begini. Misalnya, seorang pelanggan di kedai kopi telah memesan minuman yang sama beberapa kali. Nah, melihat hal ini, mungkin Anda sebagai pemilik kedai kopi ingin menawarkan diskon promosi untuk pembelian berikutnya.
+
+Tentu, Anda membutuhkan suatu cara untuk melacak relasi/hubungan semacam ini, bukan?
+
+Solusi terbaik untuk masalah tersebut adalah dengan menggunakan relational database management system (RDBMS) alias sistem manajemen database/basis data relasional. Artinya, data yang kita simpan dapat memiliki relasi dengan bagian data lainnya.
+
+Dalam dunia database, Anda akan sering mendengar kata query atau kueri. Itu adalah sekumpulan instruksi khusus untuk mengekstraksi data.
+
+Nah, database relasional menggunakan structured query language (SQL) alias bahasa kueri terstruktur untuk menyimpan dan membuat kueri data. Pendekatan semacam ini memungkinkan data disimpan dengan cara yang mudah dimengerti, konsisten, dan dapat diskalakan.
+
+Inilah solusi dari persoalan di awal tadi. Dengan database relasional, sekarang Anda dapat menulis kueri SQL untuk mengidentifikasi minuman apa yang sering dibeli oleh masing-masing pelanggan.
+
+Contoh sederhana dari database relasional adalah sistem manajemen inventaris di skenario kedai kopi kita. Setiap record (kumpulan data) di database mencakup data untuk satu item, seperti nama produk, ukuran, harga, dsb.
+
+Berikut adalah contoh sederhana dari tabel database relasional:
+
+ID	Product name	Size	Price
+1
+
+Kopi gula aren
+
+Besar
+
+Rp25.000
+
+2
+
+Kopi susu
+
+Sedang
+
+Rp15.000
+
+Sekarang pertanyaannya adalah, layanan AWS apa yang mendukung database relasional?
+
+Sambutlah, Amazon Relational Database Service (Amazon RDS). Ia adalah layanan yang memungkinkan Anda untuk menjalankan database relasional di AWS Cloud.
+
+Amazon RDS adalah layanan yang terkelola dan mendukung 6 (enam) mesin database, di antaranya:
+
+Amazon Aurora
+PostgreSQL
+MySQL
+MariaDB
+Oracle Database
+Microsoft SQL Server
+Ketahuilah! Jika Anda memiliki data center on-premise yang menjalankan salah satu mesin database di atas, Anda bisa memindahkannya ke cloud dengan mudah. Bagaimana caranya?
+
+AWS memungkinkan Anda untuk melakukan Lift-and-Shift, yaitu proses memigrasikan beban kerja dari on-premise ke AWS dengan sedikit atau bahkan tanpa modifikasi.
+
+Contohnya, Anda bisa memindahkan database on-premise lalu menjalankannya di Amazon EC2. Dengan begitu, Anda mempunyai kendali atas variabel yang sama dengan keadaan di on-premise, seperti OS, memori, CPU, kapasitas penyimpanan, dsb. Ini merupakan entri yang cepat untuk menuju cloud, bukan?
+
+Salah satu cara yang dapat Anda lakukan untuk mewujudkan proses migrasi ini adalah dengan menggunakan layanan Database Migration Service, yang nanti akan kita bahas.
+
+Sekarang, mari kita kembali ke pembahasan mengenai Amazon RDS. Layanan Amazon RDS hadir dengan berbagai fitur, termasuk:
+
+Automated patching (memperbaiki masalah dengan memperbarui program).
+Backup (pencadangan).
+Redundancy (memiliki lebih dari satu instance untuk berjaga-jaga jika instance utama gagal beroperasi).
+Failover (instance lain akan mengambil alih saat instance utama mengalami kegagalan).
+Disaster recovery (memulihkan pascabencana).
+Encryption at rest (enkripsi data saat disimpan).
+Encryption in-transit (enkripsi data saat sedang dikirim dan diterima).
+Semua hal di atas adalah proses yang biasanya harus Anda kelola sendiri jika menggunakan data center on-premise. Tentu ini menjadikannya pilihan menarik karena Anda tak pusing dengan pemeliharaan dan pengelolaan database. Karena faktanya, semua proses tersebut sangat sulit dan memakan waktu yang lama.
+
+Pertanyaan selanjutnya muncul, “Adakah cara yang bahkan bisa lebih mudah lagi untuk menjalankan beban kerja database di cloud?”
+
+Nah, mari kita sedikit membahas tentang layanan Amazon Aurora. Ia adalah opsi database relasional kelas enterprise/perusahaan yang terkelola oleh AWS. Layanan ini memiliki banyak fitur, seperti:
+
+Bisa bekerja secara kompatibel dengan MySQL dan PostgreSQL. Bahkan, dapat 5 kali lebih cepat dari database MySQL standar dan bisa 3 kali lebih cepat dari database PostgreSQL standar.
+Memberikan performa yang setara dengan database komersial dengan perbandingan biaya 1/10.
+Mampu memastikan replikasi data di seluruh fasilitas.
+Menerapkan hingga 15 read replica (replika baca).
+Mencadangkan secara berkelanjutan ke Amazon S3.
+Menerapkan point-in-time recovery (pemulihan data dari periode tertentu).
+Oke, itulah dia penjelasan tentang database relasional. Masih ada loh materi menarik lainnya yang terkait dengan database, nantikan di modul berikutnya ya.
