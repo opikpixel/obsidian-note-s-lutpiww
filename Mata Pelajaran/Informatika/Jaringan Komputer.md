@@ -1,3 +1,111 @@
+### Tujuan Pembelajaran
+
+Dengan mempelajari modul ini, Anda akan mampu:
+
+- Menjelaskan konsep dasar jaringan.
+- Membedakan antara sumber daya jaringan publik dan pribadi.
+- Menerangkan virtual private gateway menggunakan skenario kehidupan nyata.
+- Mendeskripsikan virtual private network (VPN) menggunakan cerita sehari-hari.
+- Memaparkan manfaat dari AWS Direct Connect.
+- Merangkum manfaat penerapan secara hybrid.
+- Menjabarkan lapisan keamanan yang digunakan dalam strategi IT.
+- Menguraikan layanan yang digunakan untuk berinteraksi dengan jaringan global AWS.
+
+Oke, mari kita mulai perjalanan di modul ini dari mengenal jaringan di AWS terlebih dahulu. Silakan lanjut ke materi berikutnya!
+
+  
+
+### Pengenalan ke Jaringan
+
+Pikirkan kembali skenario kedai kopi atau lingkungan AWS kita. Proses pemesanan pada kedai kopi adalah pelanggan menyampaikan ordernya kepada kasir yang lantas meneruskannya ke barista. Proses ini seharusnya sudah berjalan lancar tanpa kendala ya.
+
+Meskipun demikian, bagaimana jika ada beberapa pelanggan tak sabar yang coba mengabaikan kasir dan ingin memberikan pesanannya langsung ke barista? Para pelanggan penerobos antrean ini tentu akan merusak alur kedai kopi.
+
+[![20210328152329ccc45cf958a0f767def1ba4629570007.png](https://d17ivq9b7rppb3.cloudfront.net/original/academy/20210328152329ccc45cf958a0f767def1ba4629570007.png)](https://www.dicoding.com/academies/251/tutorials/13092# "20210328152329ccc45cf958a0f767def1ba4629570007.png")
+
+Yah, tak mungkin kita biarkan pelanggan terus berinteraksi dengan barista. Alih-alih menerima pesanan, sang barista harus fokus membuat kopi saja. Jadi, apa yang harus kita perbuat?
+
+Di AWS Anda bisa menggunakan Amazon Virtual Private Cloud (Amazon VPC) untuk menuntaskan dilema ini. VPC memungkinkan Anda untuk menyediakan bagian logis dari AWS Cloud yang terisolasi, di mana Anda dapat meluncurkan sumber daya AWS di jaringan virtual sesuai kebutuhan.
+
+Sumber daya tersebut dapat menjadi _public-facing_ yang berarti memiliki akses ke internet ataupun _private_ alias tanpa akses internet. Jenis kedua biasanya dipakai untuk layanan _backend_ seperti database atau server aplikasi.
+
+Nah, pengelompokan sumber daya menjadi publik dan privat ini disebut dengan _subnet_ yang juga merupakan rentang alamat IP di VPC Anda.
+
+Sekarang mari kembali ke kedai kopi dan mengimplementasikan apa yang telah kita pelajari di atas. Anda dapat menempatkan kasir dan barista di area kerja yang terpisah.
+
+Karena kasir bertanggung jawab untuk menerima pesanan pelanggan, maka kita tempatkan ia di _subnet publik_. Sehingga, kasir dapat berkomunikasi langsung dengan pelanggan atau internet--jika kasusnya adalah _instance_.
+
+Berbeda kasusnya untuk barista. Karena kita ingin ia fokus untuk membuat kopi dan tidak berinteraksi dengan pelanggan secara langsung, maka kita tempatkan ia di _subnet privat_. Dengan begitu, barista tetap dapat menerima pesanan dari kasir tetapi tidak langsung dari pelanggan.
+
+Konektivitas ke AWS
+Ada jutaan pelanggan yang menggunakan layanan AWS. Lalu, bayangkan terdapat pula jutaan sumber daya yang telah dibuat oleh pelanggan tersebut, seperti Amazon EC2 instance. Tanpa adanya batasan di sekitar semua sumber daya itu, traffic jaringan akan mengalir di antaranya tanpa batasan.
+
+Layanan jaringan yang dapat Anda gunakan untuk menetapkan batasan di sekitar sumber daya AWS adalah Amazon Virtual Private Cloud (Amazon VPC).
+
+
+
+Amazon Virtual Private Cloud (Amazon VPC)
+Selamat datang di Amazon Virtual Private Cloud (Amazon VPC). Anggaplah ia sebagai benteng kukuh di mana tak akan ada yang dapat masuk atau keluar tanpa izin secara eksplisit.
+
+Amazon VPC pada dasarnya adalah jaringan pribadi Anda di AWS. VPC memungkinkan Anda untuk membuat bagian terisolasi dari AWS Cloud dan meluncurkan sumber daya seperti EC2 instance dan ELB di dalamnya.
+
+Anda tak bisa menaruh sumber daya ke VPC begitu saja, melainkan harus mengelolanya di dalam subnet yang berbeda. Subnet adalah bagian dari VPC yang dapat mengelompokkan sumber daya. Subnet bersama dengan aturan jaringan--akan kita bahas nanti--dapat mengontrol apakah sumber daya tersedia untuk publik atau privat.
+
+Anda bisa saja memiliki sumber daya yang internet-facing (terhubung ke internet) sehingga dapat dijangkau oleh umum, seperti website publik.
+
+Namun, dalam skenario lain, Anda mungkin ingin memiliki sumber daya yang hanya Anda saja yang dapat menjangkaunya. Ini mungkin pas untuk layanan internal, seperti aplikasi HRD atau database.
+
+
+
+Internet Gateway
+Berkaca dari materi sebelumnya, mari kita telaah tentang sumber daya yang internet-facing atau public-facing (berhubungan dengan internet/publik).
+
+Untuk mengizinkan traffic dari internet publik mengalir masuk dan keluar dari VPC, Anda harus melampirkan apa yang disebut dengan Internet Gateway (IGW). Di bawah ini adalah contoh arsitektur yang menggunakan Internet Gateway.
+
+Jika Anda tak kunjung paham apa fungsi dari Internet Gateway, bayangkanlah ia seperti pintu depan yang terbuka untuk publik. Di kedai kopi, pintu depan berguna supaya orang-orang dapat keluar masuk dengan leluasa. Jika tak ada, bagaimana pelanggan ingin memesan kopi?
+
+Pintu depan ini adalah perumpamaan yang ideal untuk Internet Gateway. Tanpanya, tidak ada yang dapat menjangkau sumber daya di dalam VPC Anda.
+
+Selanjutnya, timbul pertanyaan seperti ini, “Bagaimana jika kita memiliki sumber daya pribadi di VPC dan tidak ingin sembarang orang bisa menjangkaunya?” Mari kita lihat di materi berikutnya!
+
+
+
+Virtual Private Gateway
+Anda bisa memasang gateway privat yang hanya mengizinkan masuk suatu permintaan jika ia berasal dari jaringan yang disetujui, bukan internet publik. Gateway privat ini disebut juga dengan virtual private gateway. Ia memudahkan Anda untuk membuat koneksi VPN (virtual private network) terenkripsi antara jaringan privat--seperti data center on-premise atau jaringan perusahaan internal--ke VPC Anda.
+
+Jadi, dapat disederhanakan bahwa virtual private gateway adalah komponen yang memungkinkan traffic internet yang terlindungi masuk ke dalam VPC. Silakan amati contoh arsitektur berikut:
+
+
+
+Bingung? Nah, untuk mempermudah penjelasan bagaimana virtual private gateway bekerja, mari kita cari tahu dengan mengaitkannya ke skenario kedai kopi. Anda bisa mengibaratkan internet itu sebagai jalan raya antara rumah Anda dan kedai kopi.
+
+Katakanlah Anda bepergian melalui jalan tersebut dengan seorang pengawal untuk melindungi Anda. Tentu, sebenarnya Anda masih menggunakan jalan yang sama dengan pelanggan lain, bedanya, Anda memiliki lapisan perlindungan ekstra.
+
+Nah, pengawal tersebut bisa Anda anggap sebagai koneksi VPN yang mengenkripsi (atau melindungi) traffic internet dari semua permintaan lain di sekitarnya.
+
+Oh, tidak! Sayangnya, sekarang timbul masalah baru terhadap kasus di atas, meskipun Anda memiliki perlindungan yang ekstra. Apa itu? Anda masih menggunakan jalanan yang sama dengan pelanggan lain. Walhasil, pastinya ia akan rentan terhadap kemacetan atau perlambatan lalu lintas.
+
+Hal yang sama pun berlaku untuk koneksi VPN. Memang betul koneksi VPN bersifat pribadi dan dienkripsi, tetapi faktanya ia masih menggunakan koneksi internet reguler dengan bandwidth (jumlah maksimum data yang dapat dikirim) yang terbagi kepada banyak pengguna internet lainnya.
+
+Lalu, bagaimana jika kita ingin memiliki koneksi pribadi yang mengarah langsung ke VPC?
+
+
+
+AWS Direct Connect
+Untuk memulai, bayangkanlah sebuah apartemen dengan lorong pribadi yang langsung terhubung ke kedai kopi. Hanya penghuni apartemen saja yang dapat melewati lorong ini.
+
+Lorong ini menyediakan jenis koneksi khusus/terdedikasi di mana penghuni apartemen dapat masuk ke kedai kopi tanpa perlu menggunakan jalan raya bersama para pelanggan lain.
+
+Intinya, jika Anda menginginkan koneksi privat, koneksi terdedikasi, jumlah latensi yang rendah, dan tingkat keamanan yang tinggi, maka Anda bisa mewujudkannya di AWS dengan menggunakan AWS Direct Connect.
+
+
+
+AWS Direct Connect memungkinkan Anda untuk membuat koneksi fiber yang privat dan terdedikasi sepenuhnya antara data center Anda dan VPC. Untuk membangun koneksi tersebut, Anda perlu berpartner dengan mitra Direct Connect yang tersedia di wilayah Anda.
+
+Dengan demikian, layanan ini dapat membantu Anda memenuhi kebutuhan regulasi dan kepatuhan yang tinggi serta menghindari potensi masalah pada bandwidth.
+
+Catatan: Satu VPC mungkin memiliki beberapa tipe gateway yang terpasang untuk berbagai jenis sumber daya di VPC yang sama namun dengan subnet yang berbeda.
+
 Subnet
 Subnet adalah sebuah bagian dari VPC di mana Anda dapat mengelompokkan sumber daya berdasarkan keamanan atau kebutuhan operasional. Subnet bisa menjadi publik maupun privat.
 

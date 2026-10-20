@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mata Pelajaran/Informatika/Jaringan Komputer.md",
+                "file": "Mata Pelajaran/Informatika/Databases.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Jaringan Komputer"
+              "title": "Databases"
             }
           }
         ]
@@ -224,6 +224,7 @@
   },
   "active": "592166d9089023e0",
   "lastOpenFiles": [
+    "Mata Pelajaran/Informatika/Jaringan Komputer.md",
     "Mata Pelajaran/Informatika/Cloud Services.md",
     "Mata Pelajaran/Informatika/Deep Learning.md",
     "Mata Pelajaran/Informatika/Artificial Intelligence.md",
@@ -251,7 +252,6 @@
     "Mata Pelajaran/Sejarah/Sejarah Peradaban Islam.md",
     "Mata Pelajaran/Sejarah/Sejarah.md",
     "Skill/Cooking.md",
-    "Wawasan/Pekerjaan.md",
     "Catatan Cepat",
     "Wawasan/Kuliah/Fakultas/Sains",
     "Wawasan/Competition",
