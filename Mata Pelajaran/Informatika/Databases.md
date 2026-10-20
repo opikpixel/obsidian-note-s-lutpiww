@@ -314,3 +314,175 @@ Menerapkan hingga 15 read replica (replika baca).
 Mencadangkan secara berkelanjutan ke Amazon S3.
 Menerapkan point-in-time recovery (pemulihan data dari periode tertentu).
 Oke, itulah dia penjelasan tentang database relasional. Masih ada loh materi menarik lainnya yang terkait dengan database, nantikan di modul berikutnya ya.
+
+## Amazon DynamoDB
+
+Sebelumnya, kita telah belajar tentang database relasional. Database relasional--misalnya MySQL standar--mengharuskan Anda untuk menentukan skema dengan baik. Ia bisa jadi terdiri dari satu atau banyak tabel yang saling berhubungan. Barulah Anda bisa menggunakan SQL untuk membuat kueri data.
+
+Jenis ini sering dipakai untuk banyak kasus penggunaan dan telah menjadi tipe database standar secara historis. Bagaimanapun, jenis database SQL yang kaku ini dapat memiliki masalah _scaling_ dan kinerja saat berada di bawah tekanan.
+
+Skema yang tetap (_fixed schema_) juga membuatnya tidak dapat memiliki variasi jenis data di dalam tabel. Jadi, database relasional bukanlah solusi terbaik untuk kumpulan data yang fleksibel dan membutuhkan akses kilat.
+
+Selain itu, pada praktiknya, banyak juga yang menjalankan database SQL bukan untuk penggunaan relasional yang kompleks, melainkan hanya untuk tabel pencarian.
+
+Nah, di sinilah Amazon DynamoDB hadir. Ia merupakan database nonrelasional (NoSQL) dan menggunakan jenis pendekatan pasangan _key-value_ (kunci-nilai).
+
+Dengan Amazon DynamoDB, Anda dapat membuat tabel, yakni tempat menyimpan dan membuat kueri data. Data diatur menjadi item/key dan item memiliki atribut/value.
+
+Anda dapat menambah dan menghapus atribut dari item di dalam tabel kapan pun. Setiap item tidak harus memiliki atribut yang sama. Sehingga, ini akan sangat baik untuk kumpulan data yang memiliki beberapa variasi antara satu item dengan item lainnya.
+
+Karena kueri pada database nonrelasional itu cenderung lebih sederhana, ini membuat Anda bisa fokus pada kumpulan item dari satu tabel, bukan kueri dari rentang beberapa tabel.
+
+Berikut adalah contoh sederhana dari tabel database nonrelasional.
+
+|Key|Value|
+|---|---|
+|1|**Nama**: Budi|
+|**Alamat**: Kenanga 123|
+|**Minuman favorit**: Kopi gula aren|
+|2|**Nama**: Siska|
+|**Alamat**: Mawar 321|
+|**Tanggal Lahir**: 5 Juli 1994|
+
+Mudah, bukan? Seperti yang telah kita pelajari sebelumnya, setiap item pada tabel tidak harus memiliki atribut yang sama.
+
+Oke, mari kita lanjutkan pembahasannya.
+
+Ketahuilah! Amazon DynamoDB ini adalah layanan yang terkelola sepenuhnya dan merupakan database _serverless_ (tanpa server). Itu artinya Anda tak perlu mengelola instance atau infrastruktur dasarnya. Bahkan, Anda tidak perlu khawatir akan proses _scaling_ (penyesuaian kapasitas) yang terjadi pada sistem.
+
+Selain itu, Amazon DynamoDB juga menyimpan data di beberapa perangkat di seluruh availability zone. Sehingga, ini menjadikannya database yang _highly available_ (sangat tersedia). Layanan ini memiliki kinerja yang sangat tinggi. Ia punya _response time_ (waktu respons) kilat, yakni milidetik, yang akan sangat bermanfaat untuk aplikasi dengan potensi jutaan pengguna.
+
+Ingat! Karena DynamoDB adalah database NoSQL alias nonrelasional, ia sangat ideal untuk kasus penggunaan tertentu, bukan untuk semua beban kerja.
+
+Salah satu contoh penggunaan Amazon DynamoDB yang luar biasa adalah pada saat Amazon Prime Day pada tahun 2019. Prime Day adalah acara belanja tahunan eksklusif untuk anggota Amazon Prime.
+
+Selama 48 jam Prime Day, ada 7,11 triliun panggilan ke API DynamoDB. Puncaknya bahkan ada pada 45,4 juta permintaan per detik. Waw, sangat andal, bukan?
+
+Sekarang, mungkin Anda akan bertanya-tanya, “Kapan kita harus menggunakan Amazon RDS dan Amazon DynamoDB?”
+
+Oke, mari kita bandingkan dua layanan tersebut secara lebih detail.
+
+| Amazon RDS                                                                                                                                                   | Amazon DynamoDB                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dirancang untuk mengurangi kerumitan administrator sekaligus memberikan _high availability_ (ketersediaan tinggi) pada _recovery_ (pemulihan) database Anda. | Menggunakan pasangan _key-value_ tanpa memerlukan skema yang rumit serta dapat beroperasi sebagai database global hanya dengan satu klik.            |
+| Anda dapat mengontrol data, skema, dan jaringan.                                                                                                             | Memiliki _throughput_ (jumlah data yang dapat dikirim dalam waktu tertentu) yang besar, _scaling_ hingga petabyte, dan akses API secara detail.      |
+| Mampu membangun sistem analisis data yang kompleks.                                                                                                          | Memungkinkan Anda membangun database yang kuat dan sangat cepat tanpa perlu fungsionalitas yang rumit.                                               |
+| Ideal untuk analisis sistem manajemen _supply chain_ (rantai pasokan).                                                                                       | Cocok untuk penggunaan data yang fleksibel dan sederhana seperti daftar kontak karyawan yang berisikan nama, nomor telepon, email, ID karyawan, dsb. |
+
+Jadi, sebenarnya ini tergantung pada kebutuhan beban kerja Anda. Setiap layanan akan menjadi solusi yang tepat untuk kebutuhan tertentu. Maka pahamilah apa yang Anda butuhkan, dengan begitu Anda akan dapat memilih layanan mana yang ideal.
+
+## Amazon Redshift
+
+Sedari tadi kita telah banyak membahas tentang jenis alur kerja dengan kebutuhan proses data yang cepat, andal, dan terkini. Yup! Database bisa menjadi solusinya karena ia dapat menangani 1.000 transaksi per detik, sangat tersedia, dan berdaya tahan.
+
+Tapi terkadang, mungkin ada kebutuhan bisnis yang melebihi dari apa yang pernah kita alami. Maka dari itu, kita membutuhkan layanan yang dapat menganalisis data.
+
+Tentu Anda dapat menggunakan satu layanan database untuk semua kebutuhan. Namun, database modern yang dirancang untuk penggunaan kueri berkinerja tinggi dan _real time_, bukanlah yang paling ideal. Simak penjelasan berikut.
+
+Database relasional akan sangat ideal untuk jenis pekerjaan yang membutuhkan fungsionalitas _read/write_ (membaca/menulis) data karena ia dapat menanganinya secara real time.
+
+Namun, masalah akan muncul saat Anda menggunakannya untuk jenis pekerjaan yang lain. Misalnya, jika Anda memakai database relasional untuk kebutuhan analisis historis, maka operasi pengumpulan data akan terus memprosesnya dan tak akan pernah berhenti. Dengan telemetri modern, volume data bisa membanjiri database. Bahkan, database relasional tradisional yang terkuat sekalipun tak bisa menanganinya.
+
+Selain itu, data yang bervariasi juga akan menjadi masalah. Misalkan Anda ingin menjalankan proyek _business intelligence_ (inteligensi bisnis) untuk data dari penyimpanan yang berbeda, seperti inventaris, keuangan, dan sistem penjualan ritel.
+
+Mungkin, solusinya adalah dengan menggunakan satu kueri untuk beberapa database sekaligus. Tetapi faktanya, database tradisional tidak bisa menanganinya dengan mudah. Nah, ketika data menjadi semakin kompleks untuk ditangani oleh database relasional tradisional, maka _data warehouse_ (gudang data) adalah solusinya. Data warehouse dirancang secara spesifik untuk jenis _big data_ semacam ini, yaitu analitik historis, bukan analisis operasional.
+
+Mari kita perjelas. Analitik historis itu seperti pertanyaan, “Tunjukkan angka penjualan satu jam terakhir di semua toko.” Intinya, data sudah siap pada saat diproses. Data tidak akan berubah lagi karena data ini adalah data historis yang sudah terjadi sebelumnya.
+
+Bandingkan pertanyaan itu dengan, "Berapa kantong kopi yang masih ada di inventaris kita sekarang?" Yang mana data tersebut bisa berubah bahkan pada saat kita bertanya. Selama pertanyaan Anda melihat ke belakang alias lampau, maka data warehouse adalah solusi yang tepat untuk lini _business intelligence_ tersebut.
+
+Ada banyak solusi data warehouse yang beredar di pasaran. Namun, dengan itu semua, Anda mungkin tetap harus melakukan banyak _undifferentiated heavy lifting_ (proses kerja yang tidak menambah nilai bagi perusahaan) guna menjaga data warehouse agar tetap dikonfigurasi, senantiasa tangguh, dan _scaling_ secara berkelanjutan.
+
+Tetapi, bukankah lebih baik jika Anda fokus pada data daripada perawatan dan pengelolaan mesin yang tak terhindarkan?
+
+Anda mungkin perlu berkenalan dengan layanan yang satu ini, yaitu Amazon Redshift. Amazon Redshift adalah layanan data warehousing yang dapat Anda gunakan untuk analitik big data. Layanan ini menawarkan kemampuan untuk mengumpulkan data dari banyak sumber dan membantu Anda memahami hubungan dan tren di seluruh data. Selain itu, ia juga dapat diskalakan secara masif.
+
+Adalah hal yang wajar untuk Redshift nodes (kumpulan sumber daya komputasi) tersedia dalam berbagai ukuran _petabyte_. Kolaborasikan Redshift nodes dengan Amazon Redshift Spectrum sehingga Anda pun dapat langsung menjalankan satu kueri SQL untuk _exabyte_ data tidak terstruktur yang berjalan di _data lake_ (penyimpanan untuk data terstruktur dan tidak terstruktur pada skala apa pun).
+
+Selebihnya lagi, Amazon Redshift ini bukan hanya sekadar mampu menangani _data set_ (kumpulan data) yang sangat besar, melainkan juga dapat mencapai kinerja hingga 10 kali lebih tinggi--dengan menggunakan berbagai inovasi--daripada database tradisional dalam hal beban kerja business intelligence.
+
+Kita tidak akan memaparkan terperinci tentang cara kerja Amazon Redshift ya. Intinya, pahami bahwa saat Anda perlu solusi business intelligence big data, ia hadir memudahkan Anda untuk memulainya hanya dengan satu panggilan API. Dengan begitu, akan lebih sedikit waktu buat menunggu hasil dan lebih banyak waktu untuk mendapatkan jawaban.
+
+AWS Database Migration Service
+Wah, tak terasa ya kita telah banyak membahas berbagai opsi database di AWS. Nah, sekarang mungkin Anda akan mengerutkan dahi, “Bagaimana kalau kita sudah punya database di on-premise atau mungkin di platform lain? Apa itu berarti kita harus memulai dari awal?”
+
+Oh, tak perlu khawatir akan itu! AWS punya cara yang ajaib.
+
+Mari berkenalan dengan AWS Database Migration Service (AWS DMS). Ia dapat memigrasikan database yang Anda miliki--baik relasional, nonrelasional (NoSQL), atau tipe penyimpanan data lain--ke AWS dengan mudah dan aman.
+
+Pada dasarnya, proses migrasi itu membutuhkan sumber dan target database. Nah, dengan AWS DMS:
+
+Database sumber tetap beroperasi penuh selama proses migrasi.
+Downtime (waktu henti) diminimalkan untuk aplikasi yang bergantung pada database tersebut.
+Database sumber dan target tidak harus bertipe sama.
+Oke. Meski tak harus bertipe sama, mari mulai pembahasan kita dari proses migrasi database yang bertipe sama (homogen) terlebih dahulu, atau dikenal sebagai homogenous database migration. Proses semacam ini dapat memigrasikan database dari:
+
+MySQL ke Amazon RDS for MySQL.
+Microsoft SQL Server ke Amazon RDS for SQL Server.
+Bahkan, Oracle ke Amazon RDS for Oracle.
+Karena sumber database dan target memiliki struktur skema, tipe data, dan kode database yang sama, hasilnya proses migrasi akan berlangsung mudah.
+
+Nah, contoh dari sumber database ini dapat berupa database yang berjalan di on-premise, Amazon EC2 instance, ataupun Amazon RDS. Sementara untuk database target, ia bisa saja database yang berada di Amazon EC2 maupun Amazon RDS.
+
+Cara kerja migrasi homogen ini pun cukup sederhana. Anda hanya perlu membuat tugas migrasi, mengoneksikannya ke database sumber dan target, lalu mulai prosesnya dengan mengeklik tombol. Sisanya, akan ditangani oleh AWS DMS. Keren, bukan?
+
+
+
+Sekarang, mari kita beralih ke jenis kedua, yakni migrasi database heterogen alias heterogeneous database migration. Berbeda dengan jenis pertama, migrasi heterogen ini terjadi saat database sumber dan target memiliki tipe yang berbeda. Ia juga merupakan proses dua langkah.
+
+Maksudnya, karena struktur skema, tipe data, dan kode database asal berbeda dengan database target, maka kita perlu mengubahnya terlebih dahulu menggunakan AWS Schema Conversion Tool. Setelah itu, barulah kita gunakan AWS DMS untuk memigrasikannya.
+
+Nah, selain dari yang dijelaskan di atas, AWS DMS juga dapat digunakan untuk:
+
+Migrasi ke database pengembangan dan pengujian
+Contoh penggunaannya adalah ketika Anda ingin melakukan pengujian aplikasi pada database produksi tanpa memengaruhi pengguna. Nah, dengan AWS DMS, Anda dapat memigrasikan salinan dari database produksi tersebut ke lingkungan pengembangan (development) atau pengujian (testing).
+Konsolidasi database
+Dengan AWS Database Migration Service, Anda dapat menggabungkan beberapa database menjadi satu database pusat.
+Replikasi database yang berkelanjutan
+AWS DMS memungkinkan Anda untuk melakukan replikasi data yang berkelanjutan. Ini berguna untuk disaster recovery (pemulihan bencana) atau pemisahan geografis.
+Oke, itulah dia materi tentang AWS Database Migration Service. Perjalanan kita belum berakhir ya, masih ada materi menarik lain di modul berikutnya. Ganbatte!
+
+Layanan Database Tambahan
+Masih ingatkah Anda dengan kalimat yang ada di materi pengantar? “Pilihlah penyimpanan dan database yang tepat untuk masing-masing kebutuhan Anda.”
+
+Yap, itu benar! Memang akan lebih baik jika kita menjalankan database yang sesuai dengan data daripada memaksakan data agar kompatibel dengan database. Ketahuilah! Tak ada satu pun database yang mampu menangani semua kebutuhan sekaligus.
+
+Sejauh ini, kita telah membahas beberapa jenis database. Sebenarnya, masih ada banyak loh layanan database lain yang ditawarkan oleh AWS guna memenuhi kebutuhan-kebutuhan tertentu.
+
+Tentu kita tidak akan membahas semuanya secara detail di modul ini, tapi tak ada salahnya juga untuk sedikit menyentuhnya agar Anda mengetahui bahwa layanan-layanan tersebut ada.
+
+Amazon DocumentDB
+Sebelumnya, kita telah menilik tentang layanan DynamoDB yang dapat digunakan untuk database pasangan key-value (kunci-nilai). Tetapi, bagaimana jika Anda memiliki kebutuhan yang lebih dari sekadar atribut sederhana? Seperti sistem manajemen konten yang lengkap misalnya.
+
+Nah, berarti Anda harus berkenalan dengan Amazon DocumentDB. Ia adalah layanan yang dapat membantu Anda untuk menangani manajemen konten, katalog, ataupun profil pengguna.
+
+Amazon DocumentDB merupakan layanan database dokumen yang mendukung beban kerja MongoDB (program database dokumen).
+
+Amazon Neptune
+Katakanlah Anda memiliki aplikasi web jejaring sosial dan ingin melacak: siapa terhubung dengan siapa. Pastinya akan sangat kaku dan sulit jika Anda mengelolanya di database relasional tradisional.
+
+Nah, Amazon Neptune dapat membantu Anda dalam hal tersebut. Ia adalah layanan graph database (database grafik) yang berguna untuk membuat dan menjalankan aplikasi dengan kumpulan data yang sangat terhubung, seperti social networking (jejaring sosial), recommendation engines (mesin pemberi rekomendasi), fraud detection (sistem pendeteksi penipuan), dan knowledge graph (grafik pengetahuan: kumpulan deskripsi yang saling terkait dari entitas).
+
+Amazon Managed Blockchain
+Jika Anda memiliki sistem supply chain (rantai pasokan) yang harus Anda lacak untuk menjamin tak akan ada suplai yang hilang, atau mungkin jika Anda mempunyai catatan perbankan/finansial yang aman, atau dalam kata lain adalah blockchain maka Anda dapat menggunakan Amazon Managed Blockchain.
+
+Dengannya, Anda dapat membuat dan mengelola jaringan blockchain dengan framework (kerangka kerja) yang open-source. Mungkin Anda kurang familier dengan blockchain? Yup, ia adalah sistem ledger (kumpulan catatan riwayat aktivitas) terdistribusi yang memungkinkan banyak pihak menjalankan transaksi dan berbagi data tanpa otoritas pusat.
+
+Amazon Managed Blockchain menggunakan desain decentralized ownership (kepemilikan yang terdesentralisasi). Artinya, beberapa pihak dapat bertransaksi tanpa harus saling mengenal atau mempercayai satu sama lain.
+
+Amazon Quantum Ledger Database (Amazon QLDB)
+Kalau memang Amazon Managed Blockchain tak dapat memenuhi kebutuhan Anda, gunakanlah Amazon Quantum Ledger Database (Amazon QLDB).
+
+Amazon QLDB adalah sistem pencatatan yang immutable di mana entri apa pun tidak akan pernah bisa dihapus dari audit. Layanan ini menyediakan log transaksi yang terpusat, tidak dapat diubah, dan dapat diverifikasi secara kriptografi.
+
+Amazon QLDB menggunakan desain centralized ownership (kepemilikan yang tersentralisasi). Maksudnya, otoritas pusat nan tepercaya memiliki, mengelola, dan membagikan ledger dengan sejumlah pihak tertentu.
+Oke, kita berhenti sejenak terlebih dahulu. Seperti yang kita tahu bersama, database itu sesungguhnya adalah sistem yang hebat, bukan? Tetapi, bukankah akan jauh lebih baik jika ada cara yang dapat membuatnya lebih cepat?
+
+Nah, AWS menawarkan beberapa opsi akselerator database yang dapat Anda gunakan untuk sejumlah skenario tertentu.
+
+Amazon ElastiCache
+AWS memungkinkan Anda untuk menambahkan lapisan cache pada database yang dapat meningkatkan read time (waktu baca) untuk permintaan umum dengan menggunakan Amazon ElastiCache. Ia mendukung dua jenis penyimpanan data: Redis dan Memcached.
+
+Amazon DynamoDB Accelerator (DAX)
+Jika Anda menggunakan Amazon DynamoDB, maka Anda harus mencoba layanan Amazon DynamoDB Accelerator (DAX), yakni native caching layer yang dirancang untuk meningkatkan waktu read (baca) untuk data nonrelasional.
+Oke, itulah beberapa layanan database tambahan yang AWS miliki. Gunakanlah setiap layanan dengan tepat untuk masing-masing kebutuhan Anda.
