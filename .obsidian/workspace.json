@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mata Pelajaran/Informatika/Databases.md",
+                "file": "Mata Pelajaran/Informatika/Cybersecurity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Databases"
+              "title": "Cybersecurity"
             }
           }
         ]
@@ -224,11 +224,11 @@
   },
   "active": "592166d9089023e0",
   "lastOpenFiles": [
+    "Mata Pelajaran/Informatika/Databases.md",
     "Mata Pelajaran/Informatika/Cloud Services.md",
     "Mata Pelajaran/Informatika/Artificial Intelligence.md",
     "Kuliah/Tugas Akhir.md",
     "Kuliah/{{folder_name}}.md",
-    "Mata Pelajaran/Informatika/Databases.md",
     "Mata Pelajaran/Informatika/Jaringan Komputer.md",
     "Mata Pelajaran/Informatika/Deep Learning.md",
     "Mata Pelajaran/Informatika/Arsitektur & Algoritma.md",
